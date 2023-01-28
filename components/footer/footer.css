@@ -1,0 +1,26 @@
+.footer {
+    padding-top: 71px;
+    padding-bottom: 136px;
+}
+
+.footer__title {
+    margin: 0;
+    width: 111px;
+    height: 48px;
+    padding-left: 682px;
+    text-align: left;
+    vertical-align: top;
+    color: #212429;
+}
+
+.footer__description {
+    margin-top: 32px;
+    margin-bottom: 0;
+    width: 640px;
+    height: 96px;
+    padding-left: 417px;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: top;
+    color: #212429;
+}
