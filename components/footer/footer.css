@@ -6,9 +6,6 @@
 
 .footer__title {
     margin: 0;
-    width: 111px;
-    height: 48px;
-    padding-left: 682px;
     font-weight: 500;
     font-size: 38px;
     text-align: left;
@@ -19,9 +16,6 @@
 .footer__description {
     margin-top: 32px;
     margin-bottom: 0;
-    width: 640px;
-    height: 96px;
-    padding-left: 417px;
     font-weight: 400;
     font-size: 16px;
     text-align: center;
