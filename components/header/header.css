@@ -1,0 +1,12 @@
+.header {
+    font-family: 'Inter', sans-serif;
+    padding-top: 96px;
+    padding-bottom: 77px;
+    font-style: normal;
+}
+
+.header__title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 50px;
+}

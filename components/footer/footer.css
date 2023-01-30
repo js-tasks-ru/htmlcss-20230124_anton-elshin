@@ -1,0 +1,25 @@
+.footer {
+    font-family: 'Inter', sans-serif;
+    padding-top: 71px;
+    padding-bottom: 136px;
+    font-style: normal;
+}
+
+.footer__title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 38px;
+    text-align: left;
+    vertical-align: top;
+    color: #212429;
+}
+
+.footer__description {
+    margin-top: 32px;
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: top;
+    color: #212429;
+}
