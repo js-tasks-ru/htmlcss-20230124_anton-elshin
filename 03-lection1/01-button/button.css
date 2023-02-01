@@ -1,1 +1,124 @@
-/* Стилизация кнопки */
+@import '../../assets/css/main.css';
+
+.button__container {
+    display: flex;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 38px;
+    font-family: Inter;
+    font-weight: 500;
+    padding: 150px 0 255px 0;
+    margin: 0;
+}
+
+.name__list {
+    padding: 161px 0 145px 0;
+    list-style: none;
+}
+
+.name__item:nth-child(1) {
+    margin-bottom: 42px;
+}
+
+.name__item:nth-child(2) {
+    margin-bottom: 49px;
+}
+
+.name__title {
+    margin: 0;
+    text-transform: uppercase;
+    color: var(--grey-3);
+    font-size: 12px;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.button__list {
+    padding: 139px 0 136px 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 189px 189px 189px;
+    grid-template-rows: 48px 48px 48px;
+    row-gap: 16px;
+    column-gap: 33px;
+}
+
+.button__item {
+
+}
+
+.button {
+    border-radius: 10px;
+    width: 189px;
+    height: 48px;
+    color: white;
+    cursor: pointer;
+    border-style: none;
+    font-size: 16px;
+}
+
+.button_primary {
+    transition: opacity 200ms ease-in-out, background 200ms ease-in-out;
+    background-color: #4263EB;
+}
+
+.button_primary:hover {
+    background-color: #2342C0;
+}
+
+.button_primary:active {
+    background-color: #4263EB;
+}
+
+.button_primary:disabled {
+    transition: none;
+    cursor: not-allowed;
+    background-color: rgba(66, 99, 235, 0.5);
+}
+
+.button_secondary {
+    border-style: none;
+    background-color: var(--purple);
+}
+
+.button_secondary:hover {
+    background-color: #5028C6;
+}
+
+.button_secondary:active {
+    background-color: var(--purple);
+}
+
+.button_secondary:disabled {
+    cursor: not-allowed;
+    background-color: rgba(112, 72, 232, 0.5);
+}
+
+.button_alternate {
+    border-style: solid;
+    background-color: var(--white);
+    color: var(--grey-4);
+    border-color: var(--grey-4);
+}
+
+.button_alternate:hover {
+    border-color: black;
+}
+
+.button_alternate:active {
+    border-color: var(--grey-4);
+}
+
+.button_alternate:disabled {
+    cursor: not-allowed;
+    background-color: white;
+    border-color: rgba(73, 80, 87, 0.3);
+    color: rgba(73, 80, 87, 0.3);
+}
