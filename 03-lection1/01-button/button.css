@@ -1,11 +1,12 @@
 @import '../../assets/css/main.css';
 
 .button__container {
+    max-width: 1440px;
     display: flex;
+    flex-direction: row;
 }
 
 .container {
-    max-width: 1440px;
     margin: 0 auto;
 }
 
