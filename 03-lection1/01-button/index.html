@@ -1,11 +1,107 @@
 <!DOCTYPE html>
-<!-- Страница с кнопкой -->
-<html lang="ru">
-    <head>
-        <link rel="stylesheet" href="../../assets/css/main.css">
-        <link rel="stylesheet" href="./button.css">
-    </head>
-    <body>
+<html lang='ru'>
+  <head>
+    <link rel='stylesheet' href='../../assets/css/main.css'>
+    <link rel='stylesheet' href='./button.css'>
+    <link rel='stylesheet' href='../../components/container/container.css'>
+    <style>
+      .button__container {
+        max-width: 1440px;
+        display: flex;
+        flex-direction: row;
+      }
 
-    </body>
+      .title {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 38px;
+        line-height: 46px;
+        padding: 150px 0 255px 0;
+        margin: 0;
+      }
+
+      .name__list {
+        padding: 161px 0 145px 0;
+        list-style: none;
+      }
+
+      .name__item:nth-child(1) {
+        margin-bottom: 42px;
+      }
+
+      .name__item:nth-child(2) {
+        margin-bottom: 49px;
+      }
+
+      .name__title {
+        margin: 0;
+        text-transform: uppercase;
+        color: var(--grey-3);
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .button__list {
+        padding: 139px 0 136px 0;
+        list-style: none;
+        transition: opacity 200ms ease-in-out, background 200ms ease-in-out;
+      }
+
+      .button__item {
+        padding-bottom: 16px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class='button__container'>
+
+      <div class='container'>
+        <h1 class='title'>Buttons</h1>
+      </div>
+
+      <div class='container'>
+        <ul class='name__list'>
+          <li class='name__item'>
+            <h2 class='name__title'>default</h2>
+          </li>
+          <li class='name__item'>
+            <h2 class='name__title'>hover</h2>
+          </li>
+          <li class='name__item'>
+            <h2 class='name__title'>disabled</h2>
+          </li>
+        </ul>
+      </div>
+
+      <div class='container'>
+        <ul class='button__list'>
+          <li class='button__item'>
+            <button class='button button_primary' type='button'>Primary</button>
+          </li>
+          <li class='button__item'>
+            <button class='button button_secondary' type='button'>Secondary</button>
+          </li>
+          <li class='button__item'>
+            <button class='button button_alternate' type='button'>Alternate</button>
+          </li>
+          <li class='button__item'>
+            <button class='button button_primary' disabled type='button'>Primary</button>
+          </li>
+          <li class='button__item'>
+            <button class='button button_secondary' disabled type='button'>Secondary</button>
+          </li>
+          <li class='button__item'>
+            <button class='button button_alternate' disabled type='button'>Alternate</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
 </html>
