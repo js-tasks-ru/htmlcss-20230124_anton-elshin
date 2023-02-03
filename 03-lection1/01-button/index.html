@@ -3,6 +3,60 @@
   <head>
     <link rel='stylesheet' href='../../assets/css/main.css'>
     <link rel='stylesheet' href='./button.css'>
+    <link rel='stylesheet' href='../../components/container/container.css'>
+    <style>
+      .button__container {
+        max-width: 1440px;
+        display: flex;
+        flex-direction: row;
+      }
+
+      .title {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 38px;
+        line-height: 46px;
+        padding: 150px 0 255px 0;
+        margin: 0;
+      }
+
+      .name__list {
+        padding: 161px 0 145px 0;
+        list-style: none;
+      }
+
+      .name__item:nth-child(1) {
+        margin-bottom: 42px;
+      }
+
+      .name__item:nth-child(2) {
+        margin-bottom: 49px;
+      }
+
+      .name__title {
+        margin: 0;
+        text-transform: uppercase;
+        color: var(--grey-3);
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .button__list {
+        padding: 139px 0 136px 0;
+        list-style: none;
+        transition: opacity 200ms ease-in-out, background 200ms ease-in-out;
+      }
+
+      .button__item {
+        padding-bottom: 16px;
+      }
+    </style>
   </head>
   <body>
 
@@ -31,28 +85,28 @@
           <li class='button__item'>
             <button class='button button_primary' type='button'>Primary</button>
           </li>
-          <li>
+          <li class='button__item'>
             <button class='button button_secondary' type='button'>Secondary</button>
           </li>
-          <li>
+          <li class='button__item'>
             <button class='button button_alternate' type='button'>Alternate</button>
           </li>
           <li class='button__item'>
             <button class='button' style='background-color: #2342C0' type='button'>Primary</button>
           </li>
-          <li>
+          <li class='button__item'>
             <button class='button' style='background-color: #5028C6' type='button'>Secondary</button>
           </li>
-          <li>
+          <li class='button__item'>
             <button class='button button_alternate' style='border-color: black' type='button'>Alternate</button>
           </li>
           <li class='button__item'>
             <button class='button button_primary' disabled type='button'>Primary</button>
           </li>
-          <li>
+          <li class='button__item'>
             <button class='button button_secondary' disabled type='button'>Secondary</button>
           </li>
-          <li>
+          <li class='button__item'>
             <button class='button button_alternate' disabled type='button'>Alternate</button>
           </li>
         </ul>
