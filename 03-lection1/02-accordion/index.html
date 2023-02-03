@@ -4,6 +4,40 @@
   <head>
     <link rel='stylesheet' href='../../assets/css/main.css'>
     <link rel='stylesheet' href='./accordion.css'>
+    <link rel='stylesheet' href='../../components/container/container.css'>
+    <style>
+        .accordion__container {
+            max-width: 1440px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .title {
+            font-size: 38px;
+            font-family: Inter;
+            font-weight: 500;
+            padding: 75px 0 116px 0;
+            margin: 0;
+        }
+
+        .accordion__summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .accordion__list {
+            list-style: none;
+            padding: 75px 0 374px 0;
+        }
+
+        .accordion__item {
+            margin-bottom: 8px;
+            border-radius: 10px;
+        }
+
+        .accordion__item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
   </head>
   <body>
 
