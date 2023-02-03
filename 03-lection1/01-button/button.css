@@ -11,10 +11,16 @@
   font-size: 16px;
   line-height: 19px;
   text-align: center;
+  padding: 15px 10px 14px 10px;
 }
 
 .button_primary {
   background-color: #4263EB;
+}
+
+.button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 .button_primary:hover {
@@ -23,12 +29,6 @@
 
 .button_primary:active {
   background-color: #4263EB;
-}
-
-.button_primary:disabled {
-  transition: none;
-  pointer-events: none;
-  opacity: 0.5;
 }
 
 .button_secondary {
@@ -44,16 +44,10 @@
   background-color: var(--purple);
 }
 
-.button_secondary:disabled {
-  pointer-events: none;
-  opacity: 0.5;
-}
-
 .button_alternate {
-  border-style: solid;
+  border: 1px solid var(--grey-4);
   background-color: var(--white);
   color: var(--grey-4);
-  border-color: var(--grey-4);
 }
 
 .button_alternate:hover {
@@ -62,10 +56,4 @@
 
 .button_alternate:active {
   border-color: var(--grey-4);
-}
-
-.button_alternate:disabled {
-  pointer-events: none;
-  background-color: white;
-  opacity: 0.3;
 }
