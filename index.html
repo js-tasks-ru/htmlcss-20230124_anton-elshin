@@ -1,21 +1,77 @@
 <!DOCTYPE html>
-<!-- Главная страница -->
-<html lang="ru">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="./assets/css/normalize.css">
-        <link rel="stylesheet" href="./assets/css/main.css">
-    </head>
-    <body>
-    <div class="page">
-        <header class="header">
-            <h1 class="header__title">Reusable component library</h1>
-        </header>
-        <main class="content"></main>
-        <footer class="footer">
-            <h2 class="footer__title">About</h2>
-            <p class="footer__description">This project is a collection of professionally designed, pre-built, fully responsive HTML snippets you can drop into your projects. Get started by checking out our free preview components, or browsing the PNG previews in the categories you're most curious about.</p>
-        </footer>
-    </div>
+<html lang='ru'>
+  <head>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='./assets/css/normalize.css'>
+    <link rel='stylesheet' href='./assets/css/main.css'>
+    <link rel='stylesheet' href='./03-lection1/01-button/button.css'>
+    <style>
+
+      .preview {
+        background-color: #F9FAFC;
+        display: flex;
+      }
+
+      .preview__container {
+        display: flex;
+        margin: auto;
+        padding-top: 68px;
+        padding-bottom: 92px;
+        flex-direction: column;
+      }
+
+      .preview__container > div {
+        margin-bottom: 64px;
+      }
+
+      .cards {
+        width: 1110px;
+        height: 764px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        width: 350px;
+        height: 367px;
+        background: #FFFFFF;
+        box-shadow: 0px 2px 4px rgba(33, 36, 41, 0.05);
+        border-radius: 12px;
+      }
+
+      .preview__button {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+  <div class='page'>
+    <header class='header'>
+      <h1 class='header__title'>Reusable component library</h1>
+    </header>
+    <main class='preview'>
+      <div class='preview__container'>
+        <div class='cards'>
+          <div class='card'></div>
+          <div class='card'></div>
+          <div class='card'></div>
+          <div class='card'></div>
+          <div class='card'></div>
+          <div class='card'></div>
+        </div>
+        <div class='preview__button'>
+          <button class='button_alternate'>Load more</button>
+        </div>
+      </div>
+    </main>
+    <footer class='footer'>
+      <h2 class='footer__title'>About</h2>
+      <p class='footer__description'>This project is a collection of professionally designed, pre-built, fully responsive HTML snippets you can drop into your projects. Get started by checking out our free preview components, or browsing the PNG previews in the categories you're most curious about.</p>
+    </footer>
+  </div>
 </body>
 </html>
