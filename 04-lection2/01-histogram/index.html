@@ -1,11 +1,97 @@
 <!DOCTYPE html>
-<!-- Страница с гистограммой -->
-<html lang="ru">
-    <head>
-        <link rel="stylesheet" href="../../assets/css/main.css">
-        <link rel="stylesheet" href="./histogram.css">
-    </head>
-    <body>
+<html lang='ru'>
+  <head>
+    <link rel='stylesheet' href='../../assets/css/main.css'>
+    <link rel='stylesheet' href='./histogram.css'>
+    <style>
+      .histogram__container {
+        max-width: 1440px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
 
-    </body>
+      .title {
+        padding: 150px 0 255px 0;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 38px;
+        line-height: 46px;
+        color: var(--black);
+      }
+
+      .histogram {
+        margin-top: 141px;
+        width: 354px;
+        height: 185px;
+        background: var(--white);
+        border: 1px solid var(--grey-3);
+        border-radius: 8px;
+      }
+
+      .histogram__chart {
+        width: 300px;
+        height: 89px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class='histogram__container'>
+
+      <div class='container'>
+        <h1 class='title'>Histogram</h1>
+      </div>
+
+      <div class='container'>
+        <div class='histogram'>
+          <div class='histogram__header'>
+            <div class='histogram__info'>
+              <span class='histogram__title'>Total orders</span>
+              <span class='histogram__count'>50254</span>
+            </div>
+            <div class='histogram__links'>
+              <span class='histogram__link'>View all</span>
+            </div>
+          </div>
+          <div class='histogram__charts'>
+            <div class='histogram__chart'>
+              <div class='histogram__line' style='width: 9px; height: 50px'></div>
+              <div class='histogram__line' style='width: 9px; height: 35px'></div>
+              <div class='histogram__line' style='width: 9px; height: 22px'></div>
+              <div class='histogram__line' style='width: 9px; height: 39px'></div>
+              <div class='histogram__line' style='width: 9px; height: 22px'></div>
+              <div class='histogram__line' style='width: 9px; height: 30px'></div>
+              <div class='histogram__line' style='width: 9px; height: 39px'></div>
+              <div class='histogram__line' style='width: 9px; height: 50px'></div>
+              <div class='histogram__line' style='width: 9px; height: 11px'></div>
+              <div class='histogram__line' style='width: 9px; height: 22px'></div>
+              <div class='histogram__line' style='width: 9px; height: 30px'></div>
+              <div class='histogram__line' style='width: 9px; height: 35px'></div>
+              <div class='histogram__line' style='width: 9px; height: 11px'></div>
+              <div class='histogram__line' style='width: 9px; height: 50px'></div>
+              <div class='histogram__line' style='width: 9px; height: 11px'></div>
+              <div class='histogram__line' style='width: 9px; height: 39px'></div>
+              <div class='histogram__line' style='width: 9px; height: 30px'></div>
+              <div class='histogram__line' style='width: 9px; height: 22px'></div>
+              <div class='histogram__line' style='width: 9px; height: 35px'></div>
+              <div class='histogram__line' style='width: 9px; height: 30px'></div>
+              <div class='histogram__line' style='width: 9px; height: 11px'></div>
+              <div class='histogram__line' style='width: 9px; height: 39px'></div>
+              <div class='histogram__line' style='width: 9px; height: 35px'></div>
+              <div class='histogram__line' style='width: 9px; height: 45px'></div>
+              <div class='histogram__line' style='width: 9px; height: 30px'></div>
+              <div class='histogram__line' style='width: 9px; height: 11px'></div>
+              <div class='histogram__line' style='width: 9px; height: 30px'></div>
+              <div class='histogram__line' style='width: 9px; height: 11px'></div>
+              <div class='histogram__line' style='width: 9px; height: 35px'></div>
+              <div class='histogram__line' style='width: 9px; height: 17px'></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </body>
 </html>
