@@ -62,4 +62,9 @@
   background-color: var(--chart);
   flex-basis: 9px;
   flex-grow: 1;
+  margin-right: 1px;
+}
+
+.histogram__line:last-child {
+  margin-right: 0;
 }
