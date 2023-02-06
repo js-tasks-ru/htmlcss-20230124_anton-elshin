@@ -4,11 +4,20 @@
     <link rel='stylesheet' href='../../assets/css/main.css'>
     <link rel='stylesheet' href='./histogram.css'>
     <style>
-      .histogram__container {
+      .histogram__page {
         max-width: 1440px;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+      }
+
+      .container > div {
+          margin-top: 141px;
+      }
+
+      .histogram__container {
+        width: 306px;
+        height: 145px;;
       }
 
       .title {
@@ -21,24 +30,10 @@
         color: var(--black);
       }
 
-      .histogram {
-        margin-top: 141px;
-        width: 354px;
-        height: 185px;
-        background: var(--white);
-        border: 1px solid var(--grey-3);
-        border-radius: 8px;
-      }
-
-      .histogram__chart {
-        width: 300px;
-        height: 89px;
-      }
-
     </style>
   </head>
   <body>
-    <div class='histogram__container'>
+    <div class='histogram__page'>
 
       <div class='container'>
         <h1 class='title'>Histogram</h1>
@@ -46,51 +41,53 @@
 
       <div class='container'>
         <div class='histogram'>
-          <div class='histogram__header'>
-            <div class='histogram__info'>
-              <span class='histogram__title'>Total orders</span>
-              <span class='histogram__count'>50254</span>
+          <div class='histogram__container'>
+            <div class='histogram__header'>
+              <div class='histogram__info'>
+                <span class='histogram__title'>Total orders</span>
+                <span class='histogram__count'>50254</span>
+              </div>
+              <div class='histogram__links'>
+                <span class='histogram__link'>View all</span>
+              </div>
             </div>
-            <div class='histogram__links'>
-              <span class='histogram__link'>View all</span>
-            </div>
-          </div>
-          <div class='histogram__charts'>
             <div class='histogram__chart'>
-              <div class='histogram__line' style='width: 9px; height: 56%'></div>
-              <div class='histogram__line' style='width: 9px; height: 39%'></div>
-              <div class='histogram__line' style='width: 9px; height: 25%'></div>
-              <div class='histogram__line' style='width: 9px; height: 44%'></div>
-              <div class='histogram__line' style='width: 9px; height: 25%'></div>
-              <div class='histogram__line' style='width: 9px; height: 34%'></div>
-              <div class='histogram__line' style='width: 9px; height: 49%'></div>
-              <div class='histogram__line' style='width: 9px; height: 56%'></div>
-              <div class='histogram__line' style='width: 9px; height: 12%'></div>
-              <div class='histogram__line' style='width: 9px; height: 25%'></div>
-              <div class='histogram__line' style='width: 9px; height: 34%'></div>
-              <div class='histogram__line' style='width: 9px; height: 39%'></div>
-              <div class='histogram__line' style='width: 9px; height: 12%'></div>
-              <div class='histogram__line' style='width: 9px; height: 56%'></div>
-              <div class='histogram__line' style='width: 9px; height: 12%'></div>
-              <div class='histogram__line' style='width: 9px; height: 44%'></div>
-              <div class='histogram__line' style='width: 9px; height: 34%'></div>
-              <div class='histogram__line' style='width: 9px; height: 25%'></div>
-              <div class='histogram__line' style='width: 9px; height: 39%'></div>
-              <div class='histogram__line' style='width: 9px; height: 34%'></div>
-              <div class='histogram__line' style='width: 9px; height: 12%'></div>
-              <div class='histogram__line' style='width: 9px; height: 44%'></div>
-              <div class='histogram__line' style='width: 9px; height: 39%'></div>
-              <div class='histogram__line' style='width: 9px; height: 51%'></div>
-              <div class='histogram__line' style='width: 9px; height: 34%'></div>
-              <div class='histogram__line' style='width: 9px; height: 12%'></div>
-              <div class='histogram__line' style='width: 9px; height: 34%'></div>
-              <div class='histogram__line' style='width: 9px; height: 12%'></div>
-              <div class='histogram__line' style='width: 9px; height: 39%'></div>
-              <div class='histogram__line' style='width: 9px; height: 19%'></div>
+              <div class='histogram__line' style='height: 100%'></div>
+              <div class='histogram__line' style='height: 70%'></div>
+              <div class='histogram__line' style='height: 44%'></div>
+              <div class='histogram__line' style='height: 78%'></div>
+              <div class='histogram__line' style='height: 44%'></div>
+              <div class='histogram__line' style='height: 60%'></div>
+              <div class='histogram__line' style='height: 78%'></div>
+              <div class='histogram__line' style='height: 100%'></div>
+              <div class='histogram__line' style='height: 22%'></div>
+              <div class='histogram__line' style='height: 44%'></div>
+              <div class='histogram__line' style='height: 60%'></div>
+              <div class='histogram__line' style='height: 70%'></div>
+              <div class='histogram__line' style='height: 22%'></div>
+              <div class='histogram__line' style='height: 100%'></div>
+              <div class='histogram__line' style='height: 22%'></div>
+              <div class='histogram__line' style='height: 78%'></div>
+              <div class='histogram__line' style='height: 60%'></div>
+              <div class='histogram__line' style='height: 44%'></div>
+              <div class='histogram__line' style='height: 70%'></div>
+              <div class='histogram__line' style='height: 60%'></div>
+              <div class='histogram__line' style='height: 22%'></div>
+              <div class='histogram__line' style='height: 78%'></div>
+              <div class='histogram__line' style='height: 70%'></div>
+              <div class='histogram__line' style='height: 90%'></div>
+              <div class='histogram__line' style='height: 60%'></div>
+              <div class='histogram__line' style='height: 22%'></div>
+              <div class='histogram__line' style='height: 60%'></div>
+              <div class='histogram__line' style='height: 22%'></div>
+              <div class='histogram__line' style='height: 70%'></div>
+              <div class='histogram__line' style='height: 34%'></div>
             </div>
           </div>
         </div>
       </div>
+
+
 
     </div>
   </body>
