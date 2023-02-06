@@ -1,0 +1,19 @@
+.preview {
+  background-color: var(--grey-5);
+}
+
+.preview__container {
+  width: 1110px;
+  height: 764px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  margin: auto auto 64px;
+
+}
+
+.preview__button {
+  display: flex;
+  justify-content: center;
+}
