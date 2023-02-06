@@ -39,15 +39,11 @@
   color: var(--black);
 }
 
-.histogram__links {
-  display: flex;
-  flex-direction: column;
-}
-
 .histogram__link {
-  padding-top: 19px;
+  padding-top: 3px;
   font-size: 16px;
   line-height: 24px;
+  color: var(--blue-1);
 }
 
 .histogram__chart {
