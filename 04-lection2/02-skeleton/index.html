@@ -4,11 +4,19 @@
     <link rel='stylesheet' href='../../assets/css/main.css'>
     <link rel='stylesheet' href='./skeleton.css'>
     <style>
-      .skeleton__container {
+      .skeleton__page {
         max-width: 1440px;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+      }
+
+      .container > h1 {
+        padding: 150px 0 255px 0;
+      }
+
+      .container > div {
+        margin-top: 150px;
       }
 
       .title {
@@ -18,62 +26,13 @@
         font-size: 38px;
         line-height: 46px;
         color: var(--black);
-        padding: 150px 0 374px 0;
         margin: 0;
-      }
-
-      .skeleton {
-        width: 579px;
-        height: 192px;
-        margin-top: 150px;
-      }
-
-      .skeleton__block {
-        width: 515px;
-        height: 128px;
-      }
-
-      .skeleton__logo {
-        width: 80px;
-        height: 80px;
-      }
-
-      .skeleton__circle {
-        width: 64px;
-        height: 64px;
-      }
-
-      .skeleton__header .skeleton__progress {
-        width: 435px;
-        height: 48px;
-      }
-
-      .skeleton__footer .skeleton__progress {
-          width: 515px;
-          height: 48px;
-      }
-
-      .skeleton__line {
-        background: linear-gradient(92.51deg, #DDE2E5 6.44%, #E2E6E8 38.47%, #F3F5F5 56.48%, #E3E7EA 77.5%, #DDE2E5 102.52%);
-        height: 20px;
-      }
-
-      .skeleton__short {
-        width: 30%;
-      }
-
-      .skeleton__middle {
-        width: 50%;
-      }
-
-      .skeleton__full {
-        width: 100%;
       }
 
     </style>
   </head>
   <body>
-    <div class='skeleton__container'>
+    <div class='skeleton__page'>
 
       <div class='container'>
         <h1 class='title'>Skeleton</h1>
@@ -81,7 +40,7 @@
 
       <div class='container'>
         <div class='skeleton'>
-          <div class='skeleton__block'>
+          <div class='skeleton__container'>
             <div class='skeleton__header'>
               <div class='skeleton__logo'>
                 <div class='skeleton__circle'></div>
