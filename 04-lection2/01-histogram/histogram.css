@@ -9,6 +9,8 @@
 
 .histogram__container {
   padding: 16px 24px;
+  width: 306px;
+  height: 145px;
 }
 
 .histogram__header {
