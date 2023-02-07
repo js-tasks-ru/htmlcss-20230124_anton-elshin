@@ -17,6 +17,12 @@
 
       .container > div {
         margin-top: 150px;
+        padding: 24px 40px 32px 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 515px;
+        height: 128px;
       }
 
       .title {
@@ -40,22 +46,18 @@
 
       <div class='container'>
         <div class='skeleton'>
-          <div class='skeleton__container'>
-            <div class='skeleton__header'>
-              <div class='skeleton__logo'>
-                <div class='skeleton__circle'></div>
-              </div>
-              <div class='skeleton__progress'>
-                <div class='skeleton__line skeleton__short'></div>
-                <div class='skeleton__line skeleton__middle'></div>
-              </div>
+          <div class='skeleton__header'>
+            <div class='skeleton__logo'>
+              <div class='skeleton__circle'></div>
             </div>
-            <div class='skeleton__footer'>
-              <div class='skeleton__progress'>
-                <div class='skeleton__line skeleton__full'></div>
-                <div class='skeleton__line skeleton__full'></div>
-              </div>
+            <div class='skeleton__progress'>
+              <div class='skeleton__line skeleton__line_short'></div>
+              <div class='skeleton__line skeleton__line_middle'></div>
             </div>
+          </div>
+          <div class='skeleton__footer'>
+            <div class='skeleton__line skeleton__line_full'></div>
+            <div class='skeleton__line skeleton__line_full'></div>
           </div>
         </div>
       </div>

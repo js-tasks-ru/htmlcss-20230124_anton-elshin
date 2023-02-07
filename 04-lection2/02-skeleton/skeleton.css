@@ -1,18 +1,9 @@
-.skeleton__container {
-  padding: 24px 40px 32px 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 515px;
-  height: 128px;
-}
-
 .skeleton__header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 16px;
   flex-wrap: wrap;
-  align-content: center;
+  align-items: center;
 }
 
 .skeleton__circle {
@@ -23,7 +14,7 @@
 .skeleton__progress {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 8px;
 }
 
 .skeleton {
@@ -38,16 +29,13 @@
 }
 
 .skeleton__progress {
-  height: 48px;
+  flex-grow: 1;
 }
 
-.skeleton__header .skeleton__progress {
-  padding-top: 8px;
-  width: 435px;
-}
-
-.skeleton__footer .skeleton__progress {
-  height: 48px;
+.skeleton__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .skeleton__line {
@@ -55,14 +43,14 @@
   height: 20px;
 }
 
-.skeleton__short {
+.skeleton__line_short {
   width: 30%;
 }
 
-.skeleton__middle {
+.skeleton__line_middle {
   width: 50%;
 }
 
-.skeleton__full {
+.skeleton__line_full {
   width: 100%;
 }
