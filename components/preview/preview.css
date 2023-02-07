@@ -3,14 +3,10 @@
 }
 
 .preview__container {
-  width: 1110px;
-  height: 764px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
-  margin: auto auto 64px;
-
+  gap: 30px;
+  margin-bottom: 64px;
 }
 
 .preview__button {
