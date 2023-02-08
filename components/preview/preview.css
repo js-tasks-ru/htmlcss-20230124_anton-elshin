@@ -1,0 +1,15 @@
+.preview {
+  background-color: var(--grey-5);
+}
+
+.preview__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 64px;
+}
+
+.preview__button {
+  display: flex;
+  justify-content: center;
+}

@@ -1,21 +1,43 @@
 <!DOCTYPE html>
-<!-- Главная страница -->
-<html lang="ru">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="./assets/css/normalize.css">
-        <link rel="stylesheet" href="./assets/css/main.css">
-    </head>
-    <body>
-    <div class="page">
-        <header class="header">
-            <h1 class="header__title">Reusable component library</h1>
-        </header>
-        <main class="content"></main>
-        <footer class="footer">
-            <h2 class="footer__title">About</h2>
-            <p class="footer__description">This project is a collection of professionally designed, pre-built, fully responsive HTML snippets you can drop into your projects. Get started by checking out our free preview components, or browsing the PNG previews in the categories you're most curious about.</p>
-        </footer>
-    </div>
+<html lang='ru'>
+  <head>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='./assets/css/normalize.css'>
+    <link rel='stylesheet' href='./assets/css/main.css'>
+    <link rel='stylesheet' href='./components/preview/preview.css'>
+    <link rel='stylesheet' href='./components/card/card.css'>
+    <link rel='stylesheet' href='./03-lection1/01-button/button.css'>
+    <style>
+      .container {
+        padding: 68px 165px 92px 165px;
+      }
+
+    </style>
+  </head>
+  <body>
+  <div class='page'>
+    <header class='header'>
+      <h1 class='header__title'>Reusable component library</h1>
+    </header>
+    <main class='preview'>
+      <div class='container'>
+        <div class='preview__container'>
+          <div class='card'></div>
+          <div class='card'></div>
+          <div class='card'></div>
+          <div class='card'></div>
+          <div class='card'></div>
+          <div class='card'></div>
+        </div>
+        <div class='preview__button'>
+          <button class='button_alternate'>Load more</button>
+        </div>
+      </div>
+    </main>
+    <footer class='footer'>
+      <h2 class='footer__title'>About</h2>
+      <p class='footer__description'>This project is a collection of professionally designed, pre-built, fully responsive HTML snippets you can drop into your projects. Get started by checking out our free preview components, or browsing the PNG previews in the categories you're most curious about.</p>
+    </footer>
+  </div>
 </body>
 </html>
