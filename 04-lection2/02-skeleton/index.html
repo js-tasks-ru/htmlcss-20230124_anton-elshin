@@ -1,11 +1,66 @@
 <!DOCTYPE html>
-<!-- Страница со скелетоном -->
-<html lang="ru">
-    <head>
-        <link rel="stylesheet" href="../../assets/css/main.css">
-        <link rel="stylesheet" href="./skeleton.css">
-    </head>
-    <body>
+<html lang='ru'>
+  <head>
+    <link rel='stylesheet' href='../../assets/css/main.css'>
+    <link rel='stylesheet' href='./skeleton.css'>
+    <style>
+      .skeleton__page {
+        max-width: 1440px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
 
-    </body>
+      .container > h1 {
+        padding: 150px 0 255px 0;
+      }
+
+      .container > div {
+        margin-top: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 515px;
+        height: 128px;
+      }
+
+      .title {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 38px;
+        line-height: 46px;
+        color: var(--black);
+        margin: 0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class='skeleton__page'>
+
+      <div class='container'>
+        <h1 class='title'>Skeleton</h1>
+      </div>
+
+      <div class='container'>
+        <div class='skeleton'>
+          <div class='skeleton__header'>
+            <div class='skeleton__logo'>
+              <div class='skeleton__circle'></div>
+            </div>
+            <div class='skeleton__progress'>
+              <div class='skeleton__line skeleton__line_short'></div>
+              <div class='skeleton__line skeleton__line_middle'></div>
+            </div>
+          </div>
+          <div class='skeleton__footer'>
+            <div class='skeleton__line skeleton__line_full'></div>
+            <div class='skeleton__line skeleton__line_full'></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </body>
 </html>
