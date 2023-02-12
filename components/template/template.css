@@ -3,7 +3,7 @@
     height: 100%;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    row-gap: 36px;
+    grid-row-gap: 36px;
 }
 
 .header_template {
@@ -15,7 +15,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 450px 1fr;
-    column-gap: 56px;
+    grid-column-gap: 56px;
 }
 
 .menu {
