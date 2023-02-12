@@ -7,7 +7,7 @@
 }
 
 .header_template {
-    height: 82px;
+    min-height: 82px;
     background: var(--white);
 }
 
@@ -81,8 +81,8 @@
 }
 
 .container_histogram {
-    width: 300px;
-    height: 157px;
+    max-width: 300px;
+    max-height: 157px;
 }
 
 .footer_template {
