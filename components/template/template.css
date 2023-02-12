@@ -71,10 +71,18 @@
     margin: 32px auto auto 48px;
 }
 
+.component_title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 38px;
+    color: var(--grey-4);
+}
+
 .container_histogram {
     width: 300px;
     height: 157px;
-
 }
 
 .footer_template {
