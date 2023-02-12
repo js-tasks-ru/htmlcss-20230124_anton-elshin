@@ -14,14 +14,16 @@
 .main {
     width: 100%;
     display: grid;
-    grid-template-columns: 450px 1fr;
+    grid-template-columns: auto 1fr;
     grid-column-gap: 56px;
+    position: relative;
 }
 
 .menu {
     min-width: 229px;
-    min-height: 246px;
     margin: 36px 56px auto 165px;
+    position: sticky;
+    top: 0;
 }
 
 .menu__title {
@@ -63,7 +65,6 @@
     box-shadow: 0px 2px 4px rgba(33, 36, 41, 0.05);
     border-radius: 12px;
     min-width: 825px;
-    min-height: 746px;
     margin-right: 165px;
 }
 
@@ -82,7 +83,6 @@
 
 .container_histogram {
     max-width: 300px;
-    max-height: 157px;
 }
 
 .footer_template {
