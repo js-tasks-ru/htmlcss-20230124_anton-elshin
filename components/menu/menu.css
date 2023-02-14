@@ -1,0 +1,39 @@
+.menu {
+    min-width: 229px;
+    position: sticky;
+    top: 0;
+}
+
+.menu__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    color: #000000;
+    margin: 0 0 16px 0;
+    padding: 0;
+}
+
+.menu__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu__item {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--black);
+    min-height: 22px;
+}
+
+.menu__item_active {
+    color: #D84910;
+}
