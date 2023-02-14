@@ -1,7 +1,6 @@
 .modal {
     box-sizing: border-box;
     background-color: rgba(196, 196, 196, 0.5);
-    margin: 40px 40px 47px 40px;
     display: none;
     position: relative;
 }
