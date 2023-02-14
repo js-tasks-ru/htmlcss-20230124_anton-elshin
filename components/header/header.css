@@ -5,6 +5,11 @@
     font-style: normal;
 }
 
+.header_template {
+    min-height: 82px;
+    background-color: var(--white);
+}
+
 .header__title {
     margin: 0;
     font-weight: 500;
