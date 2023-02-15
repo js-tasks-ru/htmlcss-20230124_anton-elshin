@@ -16,9 +16,7 @@
 }
 
 .modal__header {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
+    position: relative;
 }
 
 .modal__button {
@@ -26,6 +24,8 @@
     background-color: transparent;
     border-style: none;
     align-self: flex-start;
+    position: absolute;
+    left: calc(100% - 20px);
 }
 
 .modal__title {
