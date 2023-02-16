@@ -1,0 +1,28 @@
+@media (max-width: 2560px) {
+    .body_background {
+        background-image: url("public/forest_2560.jpg");
+    }
+}
+
+@media (max-width: 1024px) {
+    .body_background {
+        background-image: url("public/forest_1024.jpg");
+    }
+}
+
+@media (max-width: 768px) {
+    .body_background {
+        background-image: url("public/forest_768.jpg");
+    }
+}
+
+@media (max-width: 400px) {
+    .body_background {
+        background-image: url("public/forest_400.jpg");
+    }
+}
+
+.body_background {
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
