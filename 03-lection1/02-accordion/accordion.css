@@ -16,10 +16,6 @@
   padding-bottom: 24px;
 }
 
-.accordion__details[open] {
-  padding-bottom: 32px;
-}
-
 .accordion__details > .accordion__summary::after {
   display: block;
   content: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='24' width='24'><path fill-rule='evenodd' clip-rule='evenodd' d='M4.29289 8.29289C4.68342 7.90237 5.31658 7.90237 5.70711 8.29289L13 15.5858L20.2929 8.29289C20.6834 7.90237 21.3166 7.90237 21.7071 8.29289C22.0976 8.68342 22.0976 9.31658 21.7071 9.70711L13.7071 17.7071C13.3166 18.0976 12.6834 18.0976 12.2929 17.7071L4.29289 9.70711C3.90237 9.31658 3.90237 8.68342 4.29289 8.29289Z' fill='%23212429'/></svg>");
@@ -52,6 +48,7 @@
 
 .accordion__content {
   margin-top: 16px;
+  margin-bottom: 8px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
