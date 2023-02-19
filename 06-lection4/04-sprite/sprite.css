@@ -1,0 +1,23 @@
+.sprite {
+    margin-top: 150px;
+}
+
+.sprite__list {
+    display: grid;
+    grid-template-columns: 24px 24px 24px 24px 24px 24px 24px 24px;
+    grid-template-rows: 24px 24px 24px 24px;
+    column-gap: 71px;
+    row-gap: 64px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sprite__item {
+}
+
+.sprite__image {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
