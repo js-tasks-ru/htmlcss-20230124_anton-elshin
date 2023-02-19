@@ -25,9 +25,13 @@
     display: inline;
     background-color: transparent;
     border-style: none;
-    align-self: flex-start;
     position: absolute;
     left: calc(100% - 20px);
+}
+
+.modal__image {
+    width: 16px;
+    height: 16px;
 }
 
 .modal__title {

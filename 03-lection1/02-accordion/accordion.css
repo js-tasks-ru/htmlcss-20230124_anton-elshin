@@ -5,6 +5,7 @@
   padding-left: 32px;
   padding-right: 32px;
   margin-bottom: 8px;
+  position: relative;
 }
 
 .accordion__details:last-child {
@@ -19,8 +20,31 @@
   padding-bottom: 24px;
 }
 
+.accordion__details:not([open]) {
+
+}
+
 .accordion__details:last-child {
   margin-bottom: 0;
+}
+
+.accordion__details[open] > .accordion__button > .accordion__image {
+  transform: rotate(180deg);
+}
+
+.accordion__button {
+  display: inline;
+  background-color: transparent;
+  border-style: none;
+  position: absolute;
+  bottom: calc(100% - 48px);
+  left: calc(100% - 48px);
+}
+
+.accordion__image {
+  display: block;
+  width: 16px;
+  height: 16px;
 }
 
 .accordion__summary {
