@@ -1,3 +1,9 @@
+.body_background {
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-image: url("./public/forest_2560.jpg");
+}
+
 @media (max-width: 1024px) {
     .body_background {
         background-image: url("./public/forest_1024.jpg");
@@ -14,10 +20,4 @@
     .body_background {
         background-image: url("./public/forest_400.jpg");
     }
-}
-
-.body_background {
-    background-repeat: no-repeat;
-    object-fit: cover;
-    background-image: url("./public/forest_2560.jpg");
 }
