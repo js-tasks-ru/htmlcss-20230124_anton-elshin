@@ -1,11 +1,10 @@
 .sprite {
-    margin-top: 150px;
 }
 
 .sprite__list {
     display: grid;
-    grid-template-columns: 24px 24px 24px 24px 24px 24px 24px 24px;
-    grid-template-rows: 24px 24px 24px 24px;
+    grid-template-columns: repeat(8, 24px);
+    grid-template-rows: repeat(4, 24px);
     column-gap: 71px;
     row-gap: 64px;
     list-style: none;
