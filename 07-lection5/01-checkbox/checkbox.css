@@ -1,7 +1,6 @@
 .checkbox {
-    display: inline-block;
+    display: inline-flex;
     position: relative;
-    height: 28px;
 }
 
 .checkbox__input {
@@ -32,8 +31,7 @@
     display: none;
     width: 16px;
     height: 16px;
-    fill: var(--white);
-    stroke: var(--white);
+    color: var(--white);
     stroke-width: 2px;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -50,7 +48,6 @@
 
 .checkbox__input:checked ~ .checkbox__state .checkbox__control {
     background: var(--blue-1);
-    border-radius: 4px;
 }
 
 .checkbox__input:checked ~ .checkbox__state .checkbox__icon {
@@ -59,6 +56,10 @@
 
 .checkbox__input:focus ~ .checkbox__state .checkbox__title {
     text-decoration: underline;
+}
+
+.checkbox__input:disabled ~ .checkbox__state {
+    cursor: not-allowed;
 }
 
 .checkbox__input:disabled ~ .checkbox__state .checkbox__control {
