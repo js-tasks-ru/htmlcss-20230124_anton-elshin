@@ -1,5 +1,5 @@
 .radio {
-    display: inline-block;
+    display: inline-flex;
     position: relative;
 }
 
@@ -54,6 +54,10 @@
 
 .radio__input:focus ~ .radio__state .radio__title {
     text-decoration: underline;
+}
+
+.radio__input:disabled ~ .radio__state {
+    cursor: not-allowed;
 }
 
 .radio__input:disabled ~ .radio__state .radio__control {
