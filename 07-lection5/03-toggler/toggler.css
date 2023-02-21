@@ -32,6 +32,7 @@
     border-radius: 16px;
     margin-top: 2px;
     margin-left: 2px;
+    margin-right: 2px;
 }
 
 .toggler__title {
@@ -52,7 +53,6 @@
 
 .toggler__input:checked ~ .toggler__state .toggler__inner {
     background: var(--white);
-    margin-right: 2px;
 }
 
 .toggler__input:focus ~ .toggler__state .toggler__title {
