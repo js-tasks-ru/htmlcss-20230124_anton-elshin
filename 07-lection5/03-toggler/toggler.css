@@ -1,5 +1,5 @@
 .toggler {
-    display: inline-block;
+    display: inline-flex;
     position: relative;
 }
 
@@ -57,6 +57,10 @@
 
 .toggler__input:focus ~ .toggler__state .toggler__title {
     text-decoration: underline;
+}
+
+.toggler__input:disabled ~ .toggler__state {
+    cursor: not-allowed;
 }
 
 .toggler__input:disabled ~ .toggler__state .toggler__control {
