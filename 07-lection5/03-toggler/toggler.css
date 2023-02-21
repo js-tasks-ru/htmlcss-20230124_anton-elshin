@@ -1,7 +1,6 @@
 .toggler {
     display: inline-block;
     position: relative;
-    height: 28px;
 }
 
 .toggler__input {
@@ -22,14 +21,17 @@
     background: var(--white);
     border: 1px solid var(--grey-2);
     border-radius: 16px;
+
 }
 
 .toggler__inner {
     width: 24px;
     height: 24px;
     background: var(--grey-2);
-    margin: 2px 26px 2px 2px;
+    display: inline-block;
     border-radius: 16px;
+    margin-top: 2px;
+    margin-left: 2px;
 }
 
 .toggler__title {
@@ -45,11 +47,12 @@
 .toggler__input:checked ~ .toggler__state .toggler__control {
     background: var(--blue-1);
     border-radius: 16px;
+    text-align: right;
 }
 
 .toggler__input:checked ~ .toggler__state .toggler__inner {
     background: var(--white);
-    margin: 2px 2px 2px 26px;
+    margin-right: 2px;
 }
 
 .toggler__input:focus ~ .toggler__state .toggler__title {
