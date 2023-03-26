@@ -1,0 +1,39 @@
+.tabs__input {
+    display: none;
+}
+
+.tabs__scroller {
+    display: flex;
+    gap: 40px;
+    padding-left: 160px;
+    max-width: 500px;
+}
+
+.tabs__label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--black);
+    position: relative;
+    padding-bottom: 13px;
+}
+
+.tabs__link {
+    text-decoration: none;
+}
+
+.tabs__label:after {
+    display: none;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 2px solid var(--black);
+}
+
+.tabs__content {
+    display: none;
+}
