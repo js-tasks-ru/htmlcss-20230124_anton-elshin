@@ -1,11 +1,104 @@
 <!DOCTYPE html>
-<!-- Страница с полем ввода -->
 <html lang="ru">
     <head>
         <link rel="stylesheet" href="../../assets/css/main.css">
         <link rel="stylesheet" href="./input.css">
+        <style>
+
+            html {
+                width: 100%;
+                height: 100%;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                min-width: 100%;
+                min-height: 100%;
+            }
+
+            .input__page {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 415px;
+            }
+
+            .container {
+                display: grid;
+                grid-template-columns: repeat(2, 350px);
+                grid-gap: 16px 30px;
+            }
+        </style>
     </head>
     <body>
+        <div class="input__page">
+            <div class="container">
 
+                <div class="formgroup">
+                    <label class="formgroup__label" for="input-label">Label</label>
+                    <div class="formgroup__control">
+                        <input class="formgroup__input" type="text" id="input-label" placeholder="Placeholder">
+                        <svg class="formgroup__icon formgroup__icon_success">
+                            <use href="../../assets/images/sprite.svg#success"></use>
+                        </svg>
+                        <svg class="formgroup__icon formgroup__icon_error">
+                            <use href="../../assets/images/sprite.svg#error"></use>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="formgroup">
+                    <label class="formgroup__label" for="input-focus">Focus</label>
+                    <div class="formgroup__control">
+                        <input class="formgroup__input formgroup__input_focus" type="text" id="input-focus" value="Filled Input" placeholder="Placeholder">
+                        <svg class="formgroup__icon formgroup__icon_success">
+                            <use href="../../assets/images/sprite.svg#success"></use>
+                        </svg>
+                        <svg class="formgroup__icon formgroup__icon_error">
+                            <use href="../../assets/images/sprite.svg#error"></use>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="formgroup formgroup_success">
+                    <label class="formgroup__label" for="input-success">Success</label>
+                    <div class="formgroup__control">
+                        <input class="formgroup__input" type="text" id="input-success" value="Success" placeholder="Placeholder">
+                        <svg class="formgroup__icon formgroup__icon_success">
+                            <use href="../../assets/images/sprite.svg#success"></use>
+                        </svg>
+                        <svg class="formgroup__icon formgroup__icon_error">
+                            <use href="../../assets/images/sprite.svg#error"></use>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="formgroup formgroup_error">
+                    <label class="formgroup__label" for="input-error">Error</label>
+                    <div class="formgroup__control">
+                        <input class="formgroup__input" type="text" id="input-error" value="Error" placeholder="Placeholder">
+                        <svg class="formgroup__icon formgroup__icon_success">
+                            <use href="../../assets/images/sprite.svg#success"></use>
+                        </svg>
+                        <svg class="formgroup__icon formgroup__icon_error">
+                            <use href="../../assets/images/sprite.svg#error"></use>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="formgroup formgroup__select">
+                    <label class="formgroup__label">Select</label>
+                    <div class="formgroup__control">
+                        <select class="formgroup__dropdown" aria-label="Dropdown">
+                            <option value="dropdown_1">Dropdown</option>
+                        </select>
+                        <svg class="formgroup__icon formgroup__icon_uncover">
+                            <use href="../../assets/images/sprite.svg#uncover"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
