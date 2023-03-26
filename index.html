@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./components/preview/preview.css">
     <link rel="stylesheet" href="./components/card/card.css">
+    <link rel="stylesheet" href="./components/navigation/navigation.css">
     <link rel="stylesheet" href="./03-lection1/01-button/button.css">
     <link rel="stylesheet" href="./04-lection2/01-histogram/histogram.css">
     <link rel="stylesheet" href="./05-lection3/01-tooltip/tooltip.css">
@@ -132,10 +133,25 @@
   <body>
     <div class="page">
       <header class="header">
-        <div class="header__logo">
-          <div class="logo__item logo__item_square"></div>
-          <div class="logo__item logo__item_circle"></div>
-          <div class="logo__item logo__item_triangle"></div>
+        <div class="header__container">
+          <div class="header__logo">
+            <div class="logo__item logo__item_square"></div>
+            <div class="logo__item logo__item_circle"></div>
+            <div class="logo__item logo__item_triangle"></div>
+          </div>
+          <nav class="navigation">
+            <ul class="navigation__list">
+              <li class="navigation__item">
+                <a class="navigation__link navigation__link_current">Components</a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link navigation__link_disabled" href="#">About</a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link navigation__link_disabled" href="#">Contact</a>
+              </li>
+            </ul>
+          </nav>
         </div>
         <h1 class="header__title">Reusable component library</h1>
       </header>

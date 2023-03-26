@@ -10,6 +10,7 @@
   <link rel='stylesheet' href='../components/menu/menu.css'>
   <link rel='stylesheet' href='../04-lection2/01-histogram/histogram.css'>
   <link rel='stylesheet' href='../components/view/view.css'>
+  <link rel='stylesheet' href='../components/navigation/navigation.css'>
   <style>
     html {
         height: 100%;
@@ -38,10 +39,25 @@
 <body>
   <div class='page page_template'>
     <header class='header_template'>
-      <div class='header__logo'>
-        <div class='logo__item logo__item_square'></div>
-        <div class='logo__item logo__item_circle'></div>
-        <div class='logo__item logo__item_triangle'></div>
+      <div class="header__container">
+        <div class="header__logo">
+          <div class="logo__item logo__item_square"></div>
+          <div class="logo__item logo__item_circle"></div>
+          <div class="logo__item logo__item_triangle"></div>
+        </div>
+        <nav class="navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a class="navigation__link navigation__link_current" href="../index.html">Components</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link navigation__link_disabled" href="#">About</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link navigation__link_disabled" href="#">Contact</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
     <main class='main'>
