@@ -1,5 +1,5 @@
 .histogram {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   background-color: var(--white);
@@ -30,7 +30,7 @@
 }
 
 .histogram__count {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-size: 20px;
   line-height: 26px;
   color: var(--black);
