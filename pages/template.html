@@ -146,16 +146,7 @@
     }
 
     .modal__container {
-        width: 100%;
-        height: 100%;
         position: relative;
-    }
-
-    .button__modal-page {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
     }
 
     .tabs__scroller {
@@ -993,11 +984,10 @@
           <h1 class="view__title">Modal</h1>
 
           <div class="container modal__container">
-            <button class="button button_primary button__modal-page" id="modal-open">Open modal</button>
-            <div class="modal" id="modal" style="width: 1000px; height: 300px">
+            <div class="modal" style="display: block; position: relative; height: 600px; width: 700px;">
               <div class="modal__content">
                 <div class="modal__header">
-                  <button class="modal__button" id="modal-close">
+                  <button class="modal__button">
                     <svg class="modal__image">
                       <use href="../../assets/images/sprite.svg#close"></use>
                     </svg>
@@ -1022,13 +1012,86 @@
 
             <div class="tabs__content tabs__content_html">
               <code>
-
+                &lt;div class="modal__page"&gt;<br>
+                &nbsp;&lt;button class="button button_primary button__modal-page" id="modal-open"&gt;Open modal&lt;/button&gt;<br>
+                &nbsp;&lt;div class="modal" id="modal"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="modal__content"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="modal__header"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="modal__button" id="modal-close"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;svg class="modal__image"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;use href="../../assets/images/sprite.svg#close"&gt;&lt;/use&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;h4 class="modal__title"&gt;Modal title&lt;/h4&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;p class="modal__text"&gt;Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br>
+                &nbsp;&nbsp;&nbsp;&lt;/p&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&lt;/div&gt;<br>
+                &lt;/div&gt;<br>
               </code>
             </div>
 
             <div class="tabs__content tabs__content_css">
               <code>
-
+                .modal {<br>
+                &nbsp;&nbsp;box-sizing: border-box;<br>
+                &nbsp;&nbsp;background-color: rgba(196, 196, 196, 0.5);<br>
+                &nbsp;&nbsp;display: none;<br>
+                &nbsp;&nbsp;position: fixed;<br>
+                &nbsp;&nbsp;width: 100%;<br>
+                &nbsp;&nbsp;height: 100%;<br>
+                }<br>
+                <br>
+                .modal__content {<br>
+                &nbsp;&nbsp;background: var(--white);<br>
+                &nbsp;&nbsp;border-radius: 8px;<br>
+                &nbsp;&nbsp;padding: 12px 12px 33px 40px;<br>
+                &nbsp;&nbsp;position: absolute;<br>
+                &nbsp;&nbsp;top: 50%;<br>
+                &nbsp;&nbsp;left: 50%;<br>
+                &nbsp;&nbsp;transform: translate(-50%, -50%);<br>
+                }<br>
+                <br>
+                .modal__header {<br>
+                &nbsp;&nbsp;position: relative;<br>
+                }<br>
+                <br>
+                .modal__button {<br>
+                &nbsp;&nbsp;display: inline;<br>
+                &nbsp;&nbsp;background-color: transparent;<br>
+                &nbsp;&nbsp;border-style: none;<br>
+                &nbsp;&nbsp;position: absolute;<br>
+                &nbsp;&nbsp;left: calc(100% - 20px);<br>
+                }<br>
+                <br>
+                .modal__image {<br>
+                &nbsp;&nbsp;width: 16px;<br>
+                &nbsp;&nbsp;height: 16px;<br>
+                }<br>
+                <br>
+                .modal__title {<br>
+                &nbsp;&nbsp;padding-top: 18px;<br>
+                &nbsp;&nbsp;margin: 0;<br>
+                &nbsp;&nbsp;font-family: "Inter", sans-serif;<br>
+                &nbsp;&nbsp;font-style: normal;<br>
+                &nbsp;&nbsp;font-weight: 600;<br>
+                &nbsp;&nbsp;font-size: 20px;<br>
+                &nbsp;&nbsp;line-height: 24px;<br>
+                &nbsp;&nbsp;color: #334D6E;<br>
+                }<br>
+                <br>
+                .modal__text {<br>
+                &nbsp;&nbsp;padding-top: 14px;<br>
+                &nbsp;&nbsp;margin: 0 28px 0 0;<br>
+                &nbsp;&nbsp;font-family: "Inter", sans-serif;<br>
+                &nbsp;&nbsp;font-style: normal;<br>
+                &nbsp;&nbsp;font-weight: 400;<br>
+                &nbsp;&nbsp;font-size: 16px;<br>
+                &nbsp;&nbsp;line-height: 24px;<br>
+                &nbsp;&nbsp;color: var(--grey-4);<br>
+                }
               </code>
             </div>
 
@@ -1041,5 +1104,4 @@
       </footer>
     </div>
   </body>
-  <script src="../05-lection3/02-modal/index.js"></script>
 </html>
