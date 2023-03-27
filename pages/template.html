@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="../07-lection5/01-checkbox/checkbox.css">
   <link rel="stylesheet" href="../07-lection5/02-radio/radio.css">
   <link rel="stylesheet" href="../07-lection5/03-toggler/toggler.css">
+  <link rel="stylesheet" href="../07-lection5/05-tabs/tabs.css">
   <style>
     html {
         height: 100%;
@@ -63,6 +64,10 @@
         max-width: 300px;
     }
 
+    .histogram {
+      margin-left: 48px;
+    }
+
     input[id="#custom-form-elements-tab"]:checked ~ .menu__scroller label[for="#custom-form-elements-tab"],
     input[id="#histogram-tab"]:checked ~ .menu__scroller label[for="#histogram-tab"],
     input[id="#avatar-tab"]:checked ~ .menu__scroller label[for="#avatar-tab"],
@@ -78,6 +83,36 @@
     input[id="#tooltip-tab"]:checked ~ .menu__content_tooltip,
     input[id="#calendar-tab"]:checked ~ .menu__content_calendar,
     input[id="#modal-tab"]:checked ~ .menu__content_modal {
+        display: block;
+    }
+
+    input[id="#custom-form-elements-html-tab"]:checked ~ .tabs__scroller > label[for="#custom-form-elements-html-tab"]:after,
+    input[id="#custom-form-elements-css-tab"]:checked ~ .tabs__scroller > label[for="#custom-form-elements-css-tab"]:after,
+    input[id="#histogram-html-tab"]:checked ~ .tabs__scroller > label[for="#histogram-html-tab"]:after,
+    input[id="#histogram-css-tab"]:checked ~ .tabs__scroller > label[for="#histogram-css-tab"]:after,
+    input[id="#avatar-html-tab"]:checked ~ .tabs__scroller > label[for="#avatar-html-tab"]:after,
+    input[id="#avatar-css-tab"]:checked ~ .tabs__scroller > label[for="#avatar-css-tab"]:after,
+    input[id="#tooltip-html-tab"]:checked ~ .tabs__scroller > label[for="#tooltip-html-tab"]:after,
+    input[id="#tooltip-css-tab"]:checked ~ .tabs__scroller > label[for="#tooltip-css-tab"]:after,
+    input[id="#calendar-html-tab"]:checked ~ .tabs__scroller > label[for="#calendar-html-tab"]:after,
+    input[id="#calendar-css-tab"]:checked ~ .tabs__scroller > label[for="#calendar-css-tab"]:after,
+    input[id="#modal-html-tab"]:checked ~ .tabs__scroller > label[for="#modal-html-tab"]:after,
+    input[id="#modal-css-tab"]:checked ~ .tabs__scroller > label[for="#modal-css-tab"]:after {
+        display: block;
+    }
+
+    input[id="#custom-form-elements-html-tab"]:checked ~ .tabs__content_html,
+    input[id="#custom-form-elements-css-tab"]:checked ~ .tabs__content_css,
+    input[id="#histogram-html-tab"]:checked ~ .tabs__content_html,
+    input[id="#histogram-css-tab"]:checked ~ .tabs__content_css,
+    input[id="#avatar-html-tab"]:checked ~ .tabs__content_html,
+    input[id="#avatar-css-tab"]:checked ~ .tabs__content_css,
+    input[id="#tooltip-html-tab"]:checked ~ .tabs__content_html,
+    input[id="#tooltip-css-tab"]:checked ~ .tabs__content_css,
+    input[id="#calendar-html-tab"]:checked ~ .tabs__content_html,
+    input[id="#calendar-css-tab"]:checked ~ .tabs__content_css,
+    input[id="#modal-html-tab"]:checked ~ .tabs__content_html,
+    input[id="#modal-css-tab"]:checked ~ .tabs__content_css {
         display: block;
     }
 
@@ -121,6 +156,22 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    .tabs__scroller {
+        margin-top: 64px;
+    }
+
+    .tabs__content {
+        display: none;
+        min-height: 436px;
+        min-width: 782px;
+        border-top: 1px solid var(--grey-2);
+        padding: 50px 106px 64px 42px;
+    }
+
+    .container, .view__title, .tabs__scroller {
+        padding-left: 48px;
     }
 
   </style>
@@ -195,7 +246,7 @@
         <div class="view menu__content_custom_form_elements">
           <h1 class="view__title">Custom form elements</h1>
 
-          <div class="checkbox_radio_container">
+          <div class="container checkbox_radio_container">
             <div class="container_checkbox">
               <label class="checkbox">
                 <input class="checkbox__input" type="checkbox">
@@ -261,6 +312,167 @@
               </label>
             </div>
           </div>
+
+          <div class="tabs">
+            <input class="tabs__input" type="radio" name="custom-form-elements-code-tab" id="#custom-form-elements-html-tab" checked>
+            <input class="tabs__input" type="radio" name="custom-form-elements-code-tab" id="#custom-form-elements-css-tab">
+
+            <div class="tabs__scroller">
+              <label class="tabs__label" for="#custom-form-elements-html-tab">HTML</label>
+              <label class="tabs__label" for="#custom-form-elements-css-tab">CSS</label>
+            </div>
+
+            <div class="tabs__content tabs__content_html">
+              <code>
+                &lt;label class="checkbox"&gt;<br>
+                &nbsp;&lt;input class="checkbox__input" type="checkbox"&gt;<br>
+                &nbsp;&lt;div class="checkbox__state"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="checkbox__control"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;svg class="checkbox__icon"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;use href="../../assets/images/sprite.svg#check"&gt;&lt;/use&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="checkbox__title"&gt;Default&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                &lt;/label&gt;<br>
+                <br>
+                &lt;label class="checkbox"&gt;<br>
+                &nbsp;&lt;input class="checkbox__input" type="checkbox" checked&gt;<br>
+                &nbsp;&lt;div class="checkbox__state"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="checkbox__control"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;svg class="checkbox__icon"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;use href="../../assets/images/sprite.svg#check"&gt;&lt;/use&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="checkbox__title"&gt;Checked&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                &lt;/label&gt;<br>
+                <br>
+                &lt;label class="checkbox"&gt;<br>
+                &nbsp;&lt;input class="checkbox__input" type="checkbox" disabled&gt;<br>
+                &nbsp;&lt;div class="checkbox__state"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="checkbox__control"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;svg class="checkbox__icon"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;use href="../../assets/images/sprite.svg#check"&gt;&lt;/use&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="checkbox__title"&gt;Disabled&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                <br>
+                &lt;label class="radio"&gt;<br>
+                &nbsp;&lt;input class="radio__input"type="radio"&gt;<br>
+                &nbsp;&lt;div class="radio__state"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="radio__control"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="radio__inner"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="radio__title"&gt;Default&lt;/div&gt;<br>
+                &nbsp;&lt;/div&gt;<br>
+                &lt;/label&gt;<br>
+                <br>
+                &lt;label class="radio"&gt;<br>
+                &nbsp;&lt;input class="radio__input"type="radio" checked&gt;<br>
+                &nbsp;&lt;div class="radio__state"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="radio__control"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="radio__inner"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="radio__title"&gt;Checked&lt;/div&gt;<br>
+                &nbsp;&lt;/div&gt;<br>
+                &lt;/label&gt;<br>
+                <br>
+                &lt;label class="radio"&gt;<br>
+                &nbsp;&lt;input class="radio__input"type="radio" disabled&gt;<br>
+                &nbsp;&lt;div class="radio__state"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="radio__control"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="radio__inner"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="radio__title"&gt;Disabled&lt;/div&gt;<br>
+                &nbsp;&lt;/div&gt;<br>
+                &lt;/label&gt;<br>
+              </code>
+            </div>
+
+            <div class="tabs__content tabs__content_css">
+              <code>
+                .checkbox {<br>
+                &nbsp;&nbsp;display: inline-flex;<br>
+                &nbsp;&nbsp;position: relative;<br>
+                }<br>
+                <br>
+                .checkbox__input {<br>
+                &nbsp;&nbsp;position: absolute;<br>
+                &nbsp;&nbsp;outline: none;<br>
+                &nbsp;&nbsp;clip: rect(0,0,0,0);<br>
+                }<br>
+                <br>
+                .checkbox__state {<br>
+                &nbsp;&nbsp;display: inline-flex;<br>
+                &nbsp;&nbsp;align-items: center;<br>
+                &nbsp;&nbsp;gap: 12px;<br>
+                }<br>
+                <br>
+                .checkbox__control {<br>
+                &nbsp;&nbsp;box-sizing: border-box;<br>
+                &nbsp;&nbsp;background: #FFFFFF;<br>
+                &nbsp;&nbsp;border: 1px solid var(--grey-2);<br>
+                &nbsp;&nbsp;border-radius: 4px;<br>
+                &nbsp;&nbsp;width: 28px;<br>
+                &nbsp;&nbsp;height: 28px;<br>
+                &nbsp;&nbsp;display: inline-flex;<br>
+                &nbsp;&nbsp;justify-content: center;<br>
+                &nbsp;&nbsp;align-items: center;<br>
+                }<br>
+                <br>
+                .checkbox__icon {<br>
+                &nbsp;&nbsp;display: none;<br>
+                &nbsp;&nbsp;width: 16px;<br>
+                &nbsp;&nbsp;height: 16px;<br>
+                &nbsp;&nbsp;color: var(--white);<br>
+                &nbsp;&nbsp;stroke-width: 2px;<br>
+                &nbsp;&nbsp;stroke-linecap: round;<br>
+                &nbsp;&nbsp;stroke-linejoin: round;<br>
+                }<br>
+                <br>
+                .checkbox__title {<br>
+                &nbsp;&nbsp;font-family: "Inter";<br>
+                &nbsp;&nbsp;font-style: normal;<br>
+                &nbsp;&nbsp;font-weight: 400;<br>
+                &nbsp;&nbsp;font-size: 16px;<br>
+                &nbsp;&nbsp;line-height: 24px;<br>
+                &nbsp;&nbsp;color: var(--grey-4);<br>
+                }<br>
+                <br>
+                .checkbox__input:checked ~ .checkbox__state .checkbox__control {<br>
+                &nbsp;&nbsp;background: var(--blue-1);<br>
+                }<br>
+                <br>
+                .checkbox__input:checked ~ .checkbox__state .checkbox__icon {<br>
+                &nbsp;&nbsp;display: block;<br>
+                }<br>
+                <br>
+                .checkbox__input:focus ~ .checkbox__state .checkbox__title {<br>
+                &nbsp;&nbsp;text-decoration: underline;<br>
+                }<br>
+                <br>
+                .checkbox__input:disabled ~ .checkbox__state {<br>
+                &nbsp;&nbsp;cursor: not-allowed;<br>
+                }<br>
+                <br>
+                .checkbox__input:disabled ~ .checkbox__state .checkbox__control {<br>
+                &nbsp;&nbsp;background: var(--grey-2);<br>
+                &nbsp;&nbsp;border-radius: 4px;<br>
+                }<br>
+                <br>
+                .checkbox__input:disabled ~ .checkbox__state .checkbox__icon {<br>
+                &nbsp;&nbsp;display: none;<br>
+                }<br>
+                <br>
+                .checkbox__input:disabled ~ .checkbox__state .checkbox__title {<br>
+                &nbsp;&nbsp;color: var(--grey-2);<br>
+                }<br>
+              </code>
+            </div>
+
+          </div>
         </div>
 
         <div class="view menu__content_histogram">
@@ -309,22 +521,68 @@
               <div class="histogram__line" style="height: 34%"></div>
             </div>
           </div>
+
+          <div class="tabs">
+            <input class="tabs__input" type="radio" name="histogram-code-tab" id="#histogram-html-tab" checked>
+            <input class="tabs__input" type="radio" name="histogram-code-tab" id="#histogram-css-tab">
+
+            <div class="tabs__scroller">
+              <label class="tabs__label" for="#histogram-html-tab">HTML</label>
+              <label class="tabs__label" for="#histogram-css-tab">CSS</label>
+            </div>
+
+            <div class="tabs__content tabs__content_html">
+              <code>
+
+              </code>
+            </div>
+
+            <div class="tabs__content tabs__content_css">
+              <code>
+
+              </code>
+            </div>
+
+          </div>
         </div>
 
         <div class="view menu__content_avatar">
           <h1 class="view__title">Avatar</h1>
 
-          <div class="avatar__container">
+          <div class="container avatar__container">
             <div class="avatar">
               <img class="avatar__img" src="../06-lection4/01-avatar/public/avatar-200.jpg" alt="Аватар.">
             </div>
+          </div>
+
+          <div class="tabs">
+            <input class="tabs__input" type="radio" name="avatar-code-tab" id="#avatar-html-tab" checked>
+            <input class="tabs__input" type="radio" name="avatar-code-tab" id="#avatar-css-tab">
+
+            <div class="tabs__scroller">
+              <label class="tabs__label" for="#avatar-html-tab">HTML</label>
+              <label class="tabs__label" for="#avatar-css-tab">CSS</label>
+            </div>
+
+            <div class="tabs__content tabs__content_html">
+              <code>
+
+              </code>
+            </div>
+
+            <div class="tabs__content tabs__content_css">
+              <code>
+
+              </code>
+            </div>
+
           </div>
         </div>
 
         <div class="view menu__content_tooltip">
           <h1 class="view__title">Tooltip</h1>
 
-          <div class="tooltip__container">
+          <div class="container tooltip__container">
             <div class="tooltip">
               <svg class="tooltip__trigger">
                 <use href="../../assets/images/sprite.svg#help"></use>
@@ -332,12 +590,35 @@
               <div class="tooltip__bubble">Helper Text</div>
             </div>
           </div>
+
+          <div class="tabs">
+            <input class="tabs__input" type="radio" name="tooltip-code-tab" id="#tooltip-html-tab" checked>
+            <input class="tabs__input" type="radio" name="tooltip-code-tab" id="#tooltip-css-tab">
+
+            <div class="tabs__scroller">
+              <label class="tabs__label" for="#tooltip-html-tab">HTML</label>
+              <label class="tabs__label" for="#tooltip-css-tab">CSS</label>
+            </div>
+
+            <div class="tabs__content tabs__content_html">
+              <code>
+
+              </code>
+            </div>
+
+            <div class="tabs__content tabs__content_css">
+              <code>
+
+              </code>
+            </div>
+
+          </div>
         </div>
 
         <div class="view menu__content_calendar">
           <h1 class="view__title">Calendar</h1>
 
-          <div class="calendar__container">
+          <div class="container calendar__container">
             <div class="calendar">
               <div class="calendar__title">October 2019</div>
               <div class="calendar__wrapper">
@@ -395,12 +676,35 @@
               </div>
             </div>
           </div>
+
+          <div class="tabs">
+            <input class="tabs__input" type="radio" name="calendar-code-tab" id="#calendar-html-tab" checked>
+            <input class="tabs__input" type="radio" name="calendar-code-tab" id="#calendar-css-tab">
+
+            <div class="tabs__scroller">
+              <label class="tabs__label" for="#calendar-html-tab">HTML</label>
+              <label class="tabs__label" for="#calendar-css-tab">CSS</label>
+            </div>
+
+            <div class="tabs__content tabs__content_html">
+              <code>
+
+              </code>
+            </div>
+
+            <div class="tabs__content tabs__content_css">
+              <code>
+
+              </code>
+            </div>
+
+          </div>
         </div>
 
         <div class="view menu__content_modal">
           <h1 class="view__title">Modal</h1>
 
-          <div class="modal__container">
+          <div class="container modal__container">
             <button class="button button_primary button__modal-page" id="modal-open">Open modal</button>
             <div class="modal" id="modal" style="width: 1000px; height: 300px">
               <div class="modal__content">
@@ -417,6 +721,29 @@
                 </p>
               </div>
             </div>
+          </div>
+
+          <div class="tabs">
+            <input class="tabs__input" type="radio" name="modal-code-tab" id="#modal-html-tab" checked>
+            <input class="tabs__input" type="radio" name="modal-code-tab" id="#modal-css-tab">
+
+            <div class="tabs__scroller">
+              <label class="tabs__label" for="#modal-html-tab">HTML</label>
+              <label class="tabs__label" for="#modal-css-tab">CSS</label>
+            </div>
+
+            <div class="tabs__content tabs__content_html">
+              <code>
+
+              </code>
+            </div>
+
+            <div class="tabs__content tabs__content_css">
+              <code>
+
+              </code>
+            </div>
+
           </div>
         </div>
 
