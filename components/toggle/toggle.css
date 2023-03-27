@@ -9,6 +9,6 @@
     height: 24px;
 }
 
-.toggle__moon > svg {
+.toggle__moon {
     color: #ACB5BD;
 }
