@@ -30,7 +30,8 @@
 
       input[id="#all-tab"]:checked ~ .tabs__scroller > label[for="#all-tab"]:after,
       input[id="#elements-tab"]:checked ~ .tabs__scroller > label[for="#elements-tab"]:after,
-      input[id="#containers-tab"]:checked ~ .tabs__scroller > label[for="#containers-tab"]:after {
+      input[id="#containers-tab"]:checked ~ .tabs__scroller > label[for="#containers-tab"]:after,
+      input[id="#templates-tab"]:checked ~ .tabs__scroller > label[for="#templates-tab"]:after {
           display: block;
       }
 
@@ -189,7 +190,7 @@
           <label class="tabs__label" for="#all-tab">All components</label>
           <label class="tabs__label" for="#elements-tab">Elements</label>
           <label class="tabs__label" for="#containers-tab">Containers</label>
-          <a class="tabs__label tabs__link" href="pages/template.html">Templates</a>
+          <label class="tabs__label" for="#templates-tab"><a class="tabs__link" href="pages/template.html">Templates</a></label>
         </div>
 
         <div class="tabs__content tabs__content_all">

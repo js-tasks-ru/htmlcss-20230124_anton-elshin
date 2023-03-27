@@ -1,12 +1,9 @@
 .navigation {
     display: flex;
     align-items: center;
-    width: 252px;
-    margin-right: 56px;
 }
 
 .navigation__list {
-    width: 450px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -17,7 +14,6 @@
 }
 
 .navigation__item {
-    min-height: 24px;
 }
 
 .navigation__item_text {

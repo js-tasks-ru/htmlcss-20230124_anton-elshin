@@ -1,14 +1,16 @@
 .tabs__input {
-    display: none;
+    position: absolute;
+    outline: none;
+    clip: rect(0,0,0,0);
 }
 
 .tabs__scroller {
     display: flex;
+    overflow-x: auto;
     gap: 40px;
-    max-width: 500px;
 }
 
-.tabs__label {
+.tabs__label, .tabs__link {
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
