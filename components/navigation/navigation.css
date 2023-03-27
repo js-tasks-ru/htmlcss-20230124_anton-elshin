@@ -1,9 +1,8 @@
 .navigation {
-    margin-left: 168px;
-    width: 892px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    width: 252px;
+    margin-right: 56px;
 }
 
 .navigation__list {

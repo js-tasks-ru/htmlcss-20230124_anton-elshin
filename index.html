@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./components/preview/preview.css">
     <link rel="stylesheet" href="./components/card/card.css">
     <link rel="stylesheet" href="./components/navigation/navigation.css">
+    <link rel="stylesheet" href="./components/toggle/toggle.css">
     <link rel="stylesheet" href="./03-lection1/01-button/button.css">
     <link rel="stylesheet" href="./04-lection2/01-histogram/histogram.css">
     <link rel="stylesheet" href="./05-lection3/01-tooltip/tooltip.css">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="./06-lection4/01-avatar/avatar.css">
     <link rel="stylesheet" href="./07-lection5/01-checkbox/checkbox.css">
     <link rel="stylesheet" href="./07-lection5/02-radio/radio.css">
+    <link rel="stylesheet" href="./07-lection5/03-toggler/toggler.css">
     <link rel="stylesheet" href="./07-lection5/05-tabs/tabs.css">
     <style>
 
@@ -139,6 +141,7 @@
             <div class="logo__item logo__item_circle"></div>
             <div class="logo__item logo__item_triangle"></div>
           </div>
+
           <nav class="navigation">
             <ul class="navigation__list">
               <li class="navigation__item">
@@ -152,6 +155,23 @@
               </li>
             </ul>
           </nav>
+
+          <div class="toggle">
+            <svg class="toggle__sun">
+              <use href="../../assets/images/sprite.svg#sun"></use>
+            </svg>
+            <label class="toggler">
+              <input class="toggler__input" type="checkbox">
+              <div class="toggler__state">
+                <div class="toggler__control">
+                  <div class="toggler__inner"></div>
+                </div>
+              </div>
+            </label>
+            <svg class="toggle__moon">
+              <use href="../../assets/images/sprite.svg#moon"></use>
+            </svg>
+          </div>
         </div>
         <h1 class="header__title">Reusable component library</h1>
       </header>
