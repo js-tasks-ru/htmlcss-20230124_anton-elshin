@@ -533,13 +533,114 @@
 
             <div class="tabs__content tabs__content_html">
               <code>
-
+                &lt;div class="histogram"&gt;<br>
+                &nbsp;&lt;div class="histogram__header"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__info"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="histogram__title"&gt;Total orders&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="histogram__count"&gt;50254&lt;/span&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="histogram__link"&gt;View all&lt;/span&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&lt;/div&gt;<br>
+                &nbsp;&lt;div class="histogram__chart"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 100%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 70%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 44%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 78%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 44%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 60%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 78%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 100%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 22%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 44%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 60%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 70%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 22%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 100%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 22%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 78%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 60%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 44%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 70%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 60%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 22%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 78%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 70%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 90%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style='height: 60%'&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class='histogram__line' style='height: 22%'&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class='histogram__line' style='height: 60%'&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class='histogram__line' style='height: 22%'&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class='histogram__line' style='height: 70%'&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class='histogram__line' style='height: 34%'&gt;&lt;/div&gt;<br>
+                &nbsp;&lt;/div&gt;<br>
               </code>
             </div>
 
             <div class="tabs__content tabs__content_css">
               <code>
-
+                .histogram {<br>
+                &nbsp;&nbsp;font-family: "Inter";<br>
+                &nbsp;&nbsp;font-style: normal;<br>
+                &nbsp;&nbsp;font-weight: 400;<br>
+                &nbsp;&nbsp;background-color: var(--white);<br>
+                &nbsp;&nbsp;border: 1px solid var(--grey-3);<br>
+                &nbsp;&nbsp;border-radius: 8px;<br>
+                }<br>
+                <br>
+                .histogram__header {<br>
+                &nbsp;&nbsp;padding: 16px 24px 0 24px;<br>
+                &nbsp;&nbsp;display: flex;<br>
+                &nbsp;&nbsp;flex-direction: row;<br>
+                &nbsp;&nbsp;justify-content: space-between;<br>
+                }<br>
+                <br>
+                .histogram__info {<br>
+                &nbsp;&nbsp;display: flex;<br>
+                &nbsp;&nbsp;flex-direction: column;<br>
+                &nbsp;&nbsp;margin-bottom: 39px;<br>
+                }<br>
+                <br>
+                .histogram__title {<br>
+                &nbsp;&nbsp;margin-bottom: 6px;<br>
+                &nbsp;&nbsp;font-size: 16px;<br>
+                &nbsp;&nbsp;line-height: 24px;<br>
+                &nbsp;&nbsp;color: var(--black);<br>
+                &nbsp;&nbsp;opacity: 0.8;<br>
+                }<br>
+                <br>
+                .histogram__count {<br>
+                &nbsp;&nbsp;font-family: "Inter";<br>
+                &nbsp;&nbsp;font-size: 20px;<br>
+                &nbsp;&nbsp;line-height: 26px;<br>
+                &nbsp;&nbsp;color: var(--black);<br>
+                }<br>
+                <br>
+                .histogram__link {<br>
+                &nbsp;&nbsp;padding-top: 3px;<br>
+                &nbsp;&nbsp;font-size: 16px;<br>
+                &nbsp;&nbsp;line-height: 24px;<br>
+                &nbsp;&nbsp;color: var(--blue-1);<br>
+                }<br>
+                <br>
+                .histogram__chart {<br>
+                &nbsp;&nbsp;padding: 0 24px 24px 26px;<br>
+                &nbsp;&nbsp;display: flex;<br>
+                &nbsp;&nbsp;align-items: flex-end;<br>
+                &nbsp;&nbsp;height: 50px;<br>
+                }<br>
+                <br>
+                .histogram__line {<br>
+                &nbsp;&nbsp;background-color: var(--chart);<br>
+                &nbsp;&nbsp;flex-basis: 9px;<br>
+                &nbsp;&nbsp;flex-grow: 1;<br>
+                &nbsp;&nbsp;margin-right: 1px;<br>
+                }<br>
+                <br>
+                .histogram__line:last-child {<br>
+                &nbsp;&nbsp;margin-right: 0;<br>
+                }
               </code>
             </div>
 
@@ -566,13 +667,25 @@
 
             <div class="tabs__content tabs__content_html">
               <code>
-
+                &lt;div class="avatar"&gt;<br>
+                &nbsp;&lt;img class="avatar__img" src="./public/avatar-200.jpg" alt="Аватар."&gt;<br>
+                &lt;/div&gt;
               </code>
             </div>
 
             <div class="tabs__content tabs__content_css">
               <code>
-
+                .avatar {<br>
+                &nbsp;&nbsp;width: 102px;<br>
+                &nbsp;&nbsp;height: 102px;<br>
+                }<br>
+                <br>
+                .avatar__img {<br>
+                &nbsp;&nbsp;width: 100%;<br>
+                &nbsp;&nbsp;height: 100%;<br>
+                &nbsp;&nbsp;object-fit: cover;<br>
+                &nbsp;&nbsp;border-radius: 50%;<br>
+                }
               </code>
             </div>
 
@@ -602,13 +715,65 @@
 
             <div class="tabs__content tabs__content_html">
               <code>
-
+                &lt;div class="tooltip"&gt;<br>
+                &nbsp;&lt;svg class="tooltip__trigger"&gt;<br>
+                &nbsp;&nbsp;&lt;use href="../../assets/images/sprite.svg#help"&gt;&lt;/use&gt;<br>
+                &nbsp;&lt;/svg&gt;<br>
+                &nbsp;&lt;div class="tooltip__bubble"&gt;Helper Text&lt;/div&gt;<br>
+                &lt;/div&gt;
               </code>
             </div>
 
             <div class="tabs__content tabs__content_css">
               <code>
-
+                .tooltip {<br>
+                &nbsp;&nbsp;display: inline-block;<br>
+                &nbsp;&nbsp;position: relative;<br>
+                }<br>
+                <br>
+                .tooltip__trigger {<br>
+                &nbsp;&nbsp;cursor: pointer;<br>
+                &nbsp;&nbsp;position: relative;<br>
+                &nbsp;&nbsp;z-index: 1;<br>
+                &nbsp;&nbsp;width: 24px;<br>
+                &nbsp;&nbsp;height: 24px;<br>
+                }<br>
+                <br>
+                .tooltip__bubble {<br>
+                &nbsp;&nbsp;font-family: "Inter";<br>
+                &nbsp;&nbsp;font-style: normal;<br>
+                &nbsp;&nbsp;font-weight: 400;<br>
+                &nbsp;&nbsp;font-size: 16px;<br>
+                &nbsp;&nbsp;line-height: 24px;<br>
+                &nbsp;&nbsp;text-align: center;<br>
+                &nbsp;&nbsp;color: var(--grey-2);<br>
+                &nbsp;&nbsp;padding: 13px 21px 8px 21px;<br>
+                &nbsp;&nbsp;background: var(--blue-1);<br>
+                &nbsp;&nbsp;box-shadow: 0px 2px 4px rgba(33, 36, 41, 0.05);<br>
+                &nbsp;&nbsp;border-radius: 10px;<br>
+                &nbsp;&nbsp;display: none;<br>
+                &nbsp;&nbsp;position: absolute;<br>
+                &nbsp;&nbsp;white-space: nowrap;<br>
+                &nbsp;&nbsp;left: 50%;<br>
+                &nbsp;&nbsp;bottom: calc(100% + 8px);<br>
+                &nbsp;&nbsp;transform: translateX(-50%);<br>
+                }<br>
+                <br>
+                .tooltip__bubble:before {<br>
+                &nbsp;&nbsp;content: "";<br>
+                &nbsp;&nbsp;border: 10px solid transparent;<br>
+                &nbsp;&nbsp;border-top-color: var(--blue-1);<br>
+                &nbsp;&nbsp;position: absolute;<br>
+                &nbsp;&nbsp;top: 100%;<br>
+                &nbsp;&nbsp;left: 50%;<br>
+                &nbsp;&nbsp;transform: translateX(-50%);<br>
+                &nbsp;&nbsp;color: var(--blue-1);<br>
+                &nbsp;&nbsp;z-index: -1;<br>
+                }<br>
+                <br>
+                .tooltip__trigger:hover ~ .tooltip__bubble {<br>
+                &nbsp;&nbsp;display: block;<br>
+                }
               </code>
             </div>
 
@@ -688,13 +853,136 @@
 
             <div class="tabs__content tabs__content_html">
               <code>
-
+                &lt;div class="calendar"&gt;<br>
+                &nbsp;&lt;div class="calendar__title"&gt;October 2019&lt;/div&gt;<br>
+                &nbsp;&lt;div class="calendar__wrapper"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="calendar__inner"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_day"&gt;Mon&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_day"&gt;Tue&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_day"&gt;Wed&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_day"&gt;Thu&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_day"&gt;Fri&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_day"&gt;Sat&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_day"&gt;Sun&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;1&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;2&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;3&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;4&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;5&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;6&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;7&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;8&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;9&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;10&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;11&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;12&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;13&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;14&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;15&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;16&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;17&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit calendar__item_border"&gt;18&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit calendar__item_interim"&gt;19&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit calendar__item_interim"&gt;20&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit calendar__item_interim"&gt;21&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit calendar__item_interim"&gt;22&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit calendar__item_border"&gt;23&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;24&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;25&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;26&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;27&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;28&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;29&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;30&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;31&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&lt;/div&gt;<br>
+                &lt;/div&gt;
               </code>
             </div>
 
             <div class="tabs__content tabs__content_css">
               <code>
-
+                .calendar {<br>
+                &nbsp;&nbsp;background: var(--white);<br>
+                &nbsp;&nbsp;border: 1px solid var(--grey-3);<br>
+                &nbsp;&nbsp;border-radius: 8px;<br>
+                &nbsp;&nbsp;padding: 28px 36px;<br>
+                }<br>
+                <br>
+                .calendar__title {<br>
+                &nbsp;&nbsp;font-family: "Inter";<br>
+                &nbsp;&nbsp;font-style: normal;<br>
+                &nbsp;&nbsp;font-weight: 600;<br>
+                &nbsp;&nbsp;font-size: 20px;<br>
+                &nbsp;&nbsp;line-height: 24px;<br>
+                &nbsp;&nbsp;color: #334D6E;<br>
+                &nbsp;&nbsp;text-align: center;<br>
+                &nbsp;&nbsp;margin-bottom: 16px;<br>
+                }<br>
+                <br>
+                .calendar__wrapper {<br>
+                &nbsp;&nbsp;position: relative;<br>
+                &nbsp;&nbsp;padding-bottom: 100%;<br>
+                }<br>
+                <br>
+                .calendar__inner {<br>
+                &nbsp;&nbsp;position: absolute;<br>
+                &nbsp;&nbsp;top: 0;<br>
+                &nbsp;&nbsp;right: 0;<br>
+                &nbsp;&nbsp;bottom: 0;<br>
+                &nbsp;&nbsp;left: 0;<br>
+                &nbsp;&nbsp;display: grid;<br>
+                &nbsp;&nbsp;grid-template-columns: repeat(7, 1fr);<br>
+                &nbsp;&nbsp;grid-template-rows: repeat(7, 1fr);<br>
+                }<br>
+                <br>
+                .calendar__item_day {<br>
+                &nbsp;&nbsp;font-family: "Inter";<br>
+                &nbsp;&nbsp;font-style: normal;<br>
+                &nbsp;&nbsp;font-weight: 400;<br>
+                &nbsp;&nbsp;font-size: 14px;<br>
+                &nbsp;&nbsp;line-height: 20px;<br>
+                &nbsp;&nbsp;align-items: flex-end;<br>
+                &nbsp;&nbsp;text-align: center;<br>
+                &nbsp;&nbsp;color: #90A0B7;<br>
+                }<br>
+                <br>
+                .calendar__item_digit {<br>
+                &nbsp;&nbsp;font-family: "Source Sans Pro";<br>
+                }<br>
+                <br>
+                .calendar__item {<br>
+                &nbsp;&nbsp;display: flex;<br>
+                &nbsp;&nbsp;justify-content: center;<br>
+                &nbsp;&nbsp;align-items: center;<br>
+                &nbsp;&nbsp;font-style: normal;<br>
+                &nbsp;&nbsp;font-weight: 400;<br>
+                &nbsp;&nbsp;font-size: 16px;<br>
+                &nbsp;&nbsp;line-height: 20px;<br>
+                &nbsp;&nbsp;text-align: center;<br>
+                &nbsp;&nbsp;color: #334D6E;<br>
+                }<br>
+                <br>
+                .calendar__item_border {<br>
+                &nbsp;&nbsp;color: var(--white);<br>
+                &nbsp;&nbsp;background-color: var(--blue-1);<br>
+                }<br>
+                <br>
+                .calendar__item_interim {<br>
+                &nbsp;&nbsp;background-color: rgba(160, 177, 245, 0.2);<br>
+                }
               </code>
             </div>
 
