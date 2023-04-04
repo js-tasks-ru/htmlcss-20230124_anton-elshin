@@ -1,15 +1,26 @@
 <!DOCTYPE html>
-<html lang='ru'>
+<html lang="ru">
 <head>
-  <meta charset='utf-8'>
-  <link rel='stylesheet' href='../assets/css/normalize.css'>
-  <link rel='stylesheet' href='../assets/css/main.css'>
-  <link rel='stylesheet' href='../components/page/page.css'>
-  <link rel='stylesheet' href='../components/header/header.css'>
-  <link rel='stylesheet' href='../components/footer/footer.css'>
-  <link rel='stylesheet' href='../components/menu/menu.css'>
-  <link rel='stylesheet' href='../04-lection2/01-histogram/histogram.css'>
-  <link rel='stylesheet' href='../components/view/view.css'>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../assets/css/normalize.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../components/page/page.css">
+  <link rel="stylesheet" href="../components/header/header.css">
+  <link rel="stylesheet" href="../components/footer/footer.css">
+  <link rel="stylesheet" href="../components/menu/menu.css">
+  <link rel="stylesheet" href="../components/view/view.css">
+  <link rel="stylesheet" href="../components/navigation/navigation.css">
+  <link rel="stylesheet" href="../components/toggle/toggle.css">
+  <link rel="stylesheet" href="../03-lection1/01-button/button.css">
+  <link rel="stylesheet" href="../04-lection2/01-histogram/histogram.css">
+  <link rel="stylesheet" href="../05-lection3/01-tooltip/tooltip.css">
+  <link rel="stylesheet" href="../05-lection3/02-modal/modal.css">
+  <link rel="stylesheet" href="../05-lection3/03-calendar/calendar.css">
+  <link rel="stylesheet" href="../06-lection4/01-avatar/avatar.css">
+  <link rel="stylesheet" href="../07-lection5/01-checkbox/checkbox.css">
+  <link rel="stylesheet" href="../07-lection5/02-radio/radio.css">
+  <link rel="stylesheet" href="../07-lection5/03-toggler/toggler.css">
+  <link rel="stylesheet" href="../07-lection5/05-tabs/tabs.css">
   <style>
     html {
         height: 100%;
@@ -29,86 +40,1070 @@
         box-sizing: border-box;
     }
 
+    .menu__input {
+        position: absolute;
+        outline: none;
+        clip: rect(0,0,0,0);
+    }
+
+    .containers__title {
+        margin-top: 32px;
+    }
+
+    .menu__title {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .view {
+        display: none;
+    }
+
     .view .histogram {
         max-width: 300px;
     }
 
+    .histogram {
+      margin-left: 48px;
+    }
+
+    input[id="#custom-form-elements-tab"]:checked ~ .menu__scroller label[for="#custom-form-elements-tab"],
+    input[id="#histogram-tab"]:checked ~ .menu__scroller label[for="#histogram-tab"],
+    input[id="#avatar-tab"]:checked ~ .menu__scroller label[for="#avatar-tab"],
+    input[id="#tooltip-tab"]:checked ~ .menu__scroller label[for="#tooltip-tab"],
+    input[id="#calendar-tab"]:checked ~ .menu__scroller label[for="#calendar-tab"],
+    input[id="#modal-tab"]:checked ~ .menu__scroller label[for="#modal-tab"] {
+        color: #D84910;
+    }
+
+    input[id="#custom-form-elements-tab"]:checked ~ .menu__content_custom_form_elements,
+    input[id="#histogram-tab"]:checked ~ .menu__content_histogram,
+    input[id="#avatar-tab"]:checked ~ .menu__content_avatar,
+    input[id="#tooltip-tab"]:checked ~ .menu__content_tooltip,
+    input[id="#calendar-tab"]:checked ~ .menu__content_calendar,
+    input[id="#modal-tab"]:checked ~ .menu__content_modal {
+        display: block;
+    }
+
+    input[id="#custom-form-elements-html-tab"]:checked ~ .tabs__scroller > label[for="#custom-form-elements-html-tab"]:after,
+    input[id="#custom-form-elements-css-tab"]:checked ~ .tabs__scroller > label[for="#custom-form-elements-css-tab"]:after,
+    input[id="#histogram-html-tab"]:checked ~ .tabs__scroller > label[for="#histogram-html-tab"]:after,
+    input[id="#histogram-css-tab"]:checked ~ .tabs__scroller > label[for="#histogram-css-tab"]:after,
+    input[id="#avatar-html-tab"]:checked ~ .tabs__scroller > label[for="#avatar-html-tab"]:after,
+    input[id="#avatar-css-tab"]:checked ~ .tabs__scroller > label[for="#avatar-css-tab"]:after,
+    input[id="#tooltip-html-tab"]:checked ~ .tabs__scroller > label[for="#tooltip-html-tab"]:after,
+    input[id="#tooltip-css-tab"]:checked ~ .tabs__scroller > label[for="#tooltip-css-tab"]:after,
+    input[id="#calendar-html-tab"]:checked ~ .tabs__scroller > label[for="#calendar-html-tab"]:after,
+    input[id="#calendar-css-tab"]:checked ~ .tabs__scroller > label[for="#calendar-css-tab"]:after,
+    input[id="#modal-html-tab"]:checked ~ .tabs__scroller > label[for="#modal-html-tab"]:after,
+    input[id="#modal-css-tab"]:checked ~ .tabs__scroller > label[for="#modal-css-tab"]:after {
+        display: block;
+    }
+
+    input[id="#custom-form-elements-html-tab"]:checked ~ .tabs__content_html,
+    input[id="#custom-form-elements-css-tab"]:checked ~ .tabs__content_css,
+    input[id="#histogram-html-tab"]:checked ~ .tabs__content_html,
+    input[id="#histogram-css-tab"]:checked ~ .tabs__content_css,
+    input[id="#avatar-html-tab"]:checked ~ .tabs__content_html,
+    input[id="#avatar-css-tab"]:checked ~ .tabs__content_css,
+    input[id="#tooltip-html-tab"]:checked ~ .tabs__content_html,
+    input[id="#tooltip-css-tab"]:checked ~ .tabs__content_css,
+    input[id="#calendar-html-tab"]:checked ~ .tabs__content_html,
+    input[id="#calendar-css-tab"]:checked ~ .tabs__content_css,
+    input[id="#modal-html-tab"]:checked ~ .tabs__content_html,
+    input[id="#modal-css-tab"]:checked ~ .tabs__content_css {
+        display: block;
+    }
+
+    .checkbox_radio_container {
+        display: flex;
+        max-width: 246px;
+    }
+
+    .container_checkbox {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 200px;
+    }
+
+    .container_radio {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 200px;
+    }
+
+    .tooltip__container {
+        margin-top: 80px;
+        margin-left: 30px;
+    }
+
+    .calendar__container {
+        width: 304px;
+        height: 324px;
+    }
+
+    .modal__container {
+        position: relative;
+    }
+
+    .tabs__scroller {
+        margin-top: 64px;
+    }
+
+    .tabs__content {
+        display: none;
+        min-height: 436px;
+        min-width: 782px;
+        border-top: 1px solid var(--grey-2);
+        padding: 50px 106px 64px 42px;
+    }
+
+    .container, .view__title, .tabs__scroller {
+        padding-left: 48px;
+    }
+
   </style>
 </head>
-<body>
-  <div class='page page_template'>
-    <header class='header_template'>
-      <div class='header__logo'>
-        <div class='logo__item logo__item_square'></div>
-        <div class='logo__item logo__item_circle'></div>
-        <div class='logo__item logo__item_triangle'></div>
-      </div>
-    </header>
-    <main class='main'>
-      <div class='menu'>
-        <h1 class='menu__title'>Components</h1>
-        <ul class='menu__list'>
-          <li class='menu__item'>Modal</li>
-          <li class='menu__item'>Tooltip</li>
-          <li class='menu__item'>Avatar</li>
-          <li class='menu__item'>Calendar</li>
-          <li class='menu__item menu__item_active'>Histogram</li>
-          <li class='menu__item'>Custom form elements</li>
-          <li class='menu__item'></li>
-          <li class='menu__item'>Main page</li>
-        </ul>
-      </div>
-      <div class='view'>
-        <h1 class='view__title'>Histogram</h1>
-
-        <div class='histogram'>
-          <div class='histogram__header'>
-            <div class='histogram__info'>
-              <span class='histogram__title'>Total orders</span>
-              <span class='histogram__count'>50254</span>
-            </div>
-            <div>
-              <span class='histogram__link'>View all</span>
-            </div>
+  <body>
+    <div class="page page_template">
+      <header class="header_template">
+        <div class="header__container">
+          <div class="header__logo">
+            <div class="logo__item logo__item_square"></div>
+            <div class="logo__item logo__item_circle"></div>
+            <div class="logo__item logo__item_triangle"></div>
           </div>
-          <div class='histogram__chart'>
-            <div class='histogram__line' style='height: 100%'></div>
-            <div class='histogram__line' style='height: 70%'></div>
-            <div class='histogram__line' style='height: 44%'></div>
-            <div class='histogram__line' style='height: 78%'></div>
-            <div class='histogram__line' style='height: 44%'></div>
-            <div class='histogram__line' style='height: 60%'></div>
-            <div class='histogram__line' style='height: 78%'></div>
-            <div class='histogram__line' style='height: 100%'></div>
-            <div class='histogram__line' style='height: 22%'></div>
-            <div class='histogram__line' style='height: 44%'></div>
-            <div class='histogram__line' style='height: 60%'></div>
-            <div class='histogram__line' style='height: 70%'></div>
-            <div class='histogram__line' style='height: 22%'></div>
-            <div class='histogram__line' style='height: 100%'></div>
-            <div class='histogram__line' style='height: 22%'></div>
-            <div class='histogram__line' style='height: 78%'></div>
-            <div class='histogram__line' style='height: 60%'></div>
-            <div class='histogram__line' style='height: 44%'></div>
-            <div class='histogram__line' style='height: 70%'></div>
-            <div class='histogram__line' style='height: 60%'></div>
-            <div class='histogram__line' style='height: 22%'></div>
-            <div class='histogram__line' style='height: 78%'></div>
-            <div class='histogram__line' style='height: 70%'></div>
-            <div class='histogram__line' style='height: 90%'></div>
-            <div class='histogram__line' style='height: 60%'></div>
-            <div class='histogram__line' style='height: 22%'></div>
-            <div class='histogram__line' style='height: 60%'></div>
-            <div class='histogram__line' style='height: 22%'></div>
-            <div class='histogram__line' style='height: 70%'></div>
-            <div class='histogram__line' style='height: 34%'></div>
+
+          <nav class="navigation">
+            <ul class="navigation__list">
+              <li class="navigation__item">
+                <a class="navigation__link navigation__link_current" href="../index.html">Components</a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link navigation__link_disabled" href="#">About</a>
+              </li>
+              <li class="navigation__item">
+                <a class="navigation__link navigation__link_disabled" href="#">Contact</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="toggle">
+            <svg class="toggle__sun">
+              <use href="../../assets/images/sprite.svg#sun"></use>
+            </svg>
+            <label class="toggler">
+              <input class="toggler__input" type="checkbox">
+              <div class="toggler__state">
+                <div class="toggler__control">
+                  <div class="toggler__inner"></div>
+                </div>
+              </div>
+            </label>
+            <svg class="toggle__moon">
+              <use href="../../assets/images/sprite.svg#moon"></use>
+            </svg>
           </div>
         </div>
-      </div>
-    </main>
-    <footer class='footer_template'>
-      <h2 class='footer__title'>Reusable component library</h2>
-    </footer>
-  </div>
-</body>
+      </header>
+      <main class="main menu">
+
+        <input class="menu__input" type="radio" name="tab-view" id="#custom-form-elements-tab" checked>
+        <input class="menu__input" type="radio" name="tab-view" id="#histogram-tab">
+        <input class="menu__input" type="radio" name="tab-view" id="#avatar-tab">
+
+        <input class="menu__input" type="radio" name="tab-view" id="#tooltip-tab">
+        <input class="menu__input" type="radio" name="tab-view" id="#calendar-tab">
+        <input class="menu__input" type="radio" name="tab-view" id="#modal-tab">
+
+        <div class="menu__scroller">
+          <h2 class="menu__title elements__title">Elements</h2>
+          <ul class="menu__list">
+            <li class="menu__item"><label class="tabs__label" for="#custom-form-elements-tab">Custom form elements</label></li>
+            <li class="menu__item"><label class="tabs__label" for="#histogram-tab">Histogram</label></li>
+            <li class="menu__item"><label class="tabs__label" for="#avatar-tab">Avatar</label></li>
+          </ul>
+          <h2 class="menu__title containers__title">Containers</h2>
+          <ul class="menu__list">
+            <li class="menu__item"><label class="tabs__label" for="#tooltip-tab">Tooltip</label></li>
+            <li class="menu__item"><label class="tabs__label" for="#calendar-tab">Calendar</label></li>
+            <li class="menu__item"><label class="tabs__label" for="#modal-tab">Modal</label></li>
+          </ul>
+        </div>
+
+        <div class="view menu__content_custom_form_elements">
+          <h1 class="view__title">Custom form elements</h1>
+
+          <div class="container checkbox_radio_container">
+            <div class="container_checkbox">
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox">
+                <div class="checkbox__state">
+                  <div class="checkbox__control">
+                    <svg class="checkbox__icon">
+                      <use href="../../assets/images/sprite.svg#check"></use>
+                    </svg>
+                  </div>
+                  <div class="checkbox__title">Default</div>
+                </div>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" checked>
+                <div class="checkbox__state">
+                  <div class="checkbox__control">
+                    <svg class="checkbox__icon">
+                      <use href="../../assets/images/sprite.svg#check"></use>
+                    </svg>
+                  </div>
+                  <div class="checkbox__title">Checked</div>
+                </div>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" disabled>
+                <div class="checkbox__state">
+                  <div class="checkbox__control">
+                    <svg class="checkbox__icon">
+                      <use href="../../assets/images/sprite.svg#check"></use>
+                    </svg>
+                  </div>
+                  <div class="checkbox__title">Disabled</div>
+                </div>
+              </label>
+            </div>
+            <div class="container_radio">
+              <label class="radio">
+                <input class="radio__input" type="radio">
+                <div class="radio__state">
+                  <div class="radio__control">
+                    <div class="radio__inner"></div>
+                  </div>
+                  <div class="radio__title">Default</div>
+                </div>
+              </label>
+              <label class="radio">
+                <input class="radio__input" type="radio" checked>
+                <div class="radio__state">
+                  <div class="radio__control">
+                    <div class="radio__inner"></div>
+                  </div>
+                  <div class="radio__title">Checked</div>
+                </div>
+              </label>
+              <label class="radio">
+                <input class="radio__input" type="radio" disabled>
+                <div class="radio__state">
+                  <div class="radio__control">
+                    <div class="radio__inner"></div>
+                  </div>
+                  <div class="radio__title">Disabled</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="tabs">
+            <input class="tabs__input" type="radio" name="custom-form-elements-code-tab" id="#custom-form-elements-html-tab" checked>
+            <input class="tabs__input" type="radio" name="custom-form-elements-code-tab" id="#custom-form-elements-css-tab">
+
+            <div class="tabs__scroller">
+              <label class="tabs__label" for="#custom-form-elements-html-tab">HTML</label>
+              <label class="tabs__label" for="#custom-form-elements-css-tab">CSS</label>
+            </div>
+
+            <div class="tabs__content tabs__content_html">
+              <code>
+                &lt;label class="checkbox"&gt;<br>
+                &nbsp;&lt;input class="checkbox__input" type="checkbox"&gt;<br>
+                &nbsp;&lt;div class="checkbox__state"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="checkbox__control"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;svg class="checkbox__icon"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;use href="../../assets/images/sprite.svg#check"&gt;&lt;/use&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="checkbox__title"&gt;Default&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                &lt;/label&gt;<br>
+                <br>
+                &lt;label class="checkbox"&gt;<br>
+                &nbsp;&lt;input class="checkbox__input" type="checkbox" checked&gt;<br>
+                &nbsp;&lt;div class="checkbox__state"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="checkbox__control"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;svg class="checkbox__icon"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;use href="../../assets/images/sprite.svg#check"&gt;&lt;/use&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="checkbox__title"&gt;Checked&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                &lt;/label&gt;<br>
+                <br>
+                &lt;label class="checkbox"&gt;<br>
+                &nbsp;&lt;input class="checkbox__input" type="checkbox" disabled&gt;<br>
+                &nbsp;&lt;div class="checkbox__state"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="checkbox__control"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;svg class="checkbox__icon"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;use href="../../assets/images/sprite.svg#check"&gt;&lt;/use&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="checkbox__title"&gt;Disabled&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                <br>
+                &lt;label class="radio"&gt;<br>
+                &nbsp;&lt;input class="radio__input"type="radio"&gt;<br>
+                &nbsp;&lt;div class="radio__state"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="radio__control"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="radio__inner"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="radio__title"&gt;Default&lt;/div&gt;<br>
+                &nbsp;&lt;/div&gt;<br>
+                &lt;/label&gt;<br>
+                <br>
+                &lt;label class="radio"&gt;<br>
+                &nbsp;&lt;input class="radio__input"type="radio" checked&gt;<br>
+                &nbsp;&lt;div class="radio__state"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="radio__control"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="radio__inner"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="radio__title"&gt;Checked&lt;/div&gt;<br>
+                &nbsp;&lt;/div&gt;<br>
+                &lt;/label&gt;<br>
+                <br>
+                &lt;label class="radio"&gt;<br>
+                &nbsp;&lt;input class="radio__input"type="radio" disabled&gt;<br>
+                &nbsp;&lt;div class="radio__state"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="radio__control"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="radio__inner"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="radio__title"&gt;Disabled&lt;/div&gt;<br>
+                &nbsp;&lt;/div&gt;<br>
+                &lt;/label&gt;<br>
+              </code>
+            </div>
+
+            <div class="tabs__content tabs__content_css">
+              <code>
+                .checkbox {<br>
+                &nbsp;&nbsp;display: inline-flex;<br>
+                &nbsp;&nbsp;position: relative;<br>
+                }<br>
+                <br>
+                .checkbox__input {<br>
+                &nbsp;&nbsp;position: absolute;<br>
+                &nbsp;&nbsp;outline: none;<br>
+                &nbsp;&nbsp;clip: rect(0,0,0,0);<br>
+                }<br>
+                <br>
+                .checkbox__state {<br>
+                &nbsp;&nbsp;display: inline-flex;<br>
+                &nbsp;&nbsp;align-items: center;<br>
+                &nbsp;&nbsp;gap: 12px;<br>
+                }<br>
+                <br>
+                .checkbox__control {<br>
+                &nbsp;&nbsp;box-sizing: border-box;<br>
+                &nbsp;&nbsp;background: #FFFFFF;<br>
+                &nbsp;&nbsp;border: 1px solid var(--grey-2);<br>
+                &nbsp;&nbsp;border-radius: 4px;<br>
+                &nbsp;&nbsp;width: 28px;<br>
+                &nbsp;&nbsp;height: 28px;<br>
+                &nbsp;&nbsp;display: inline-flex;<br>
+                &nbsp;&nbsp;justify-content: center;<br>
+                &nbsp;&nbsp;align-items: center;<br>
+                }<br>
+                <br>
+                .checkbox__icon {<br>
+                &nbsp;&nbsp;display: none;<br>
+                &nbsp;&nbsp;width: 16px;<br>
+                &nbsp;&nbsp;height: 16px;<br>
+                &nbsp;&nbsp;color: var(--white);<br>
+                &nbsp;&nbsp;stroke-width: 2px;<br>
+                &nbsp;&nbsp;stroke-linecap: round;<br>
+                &nbsp;&nbsp;stroke-linejoin: round;<br>
+                }<br>
+                <br>
+                .checkbox__title {<br>
+                &nbsp;&nbsp;font-family: "Inter";<br>
+                &nbsp;&nbsp;font-style: normal;<br>
+                &nbsp;&nbsp;font-weight: 400;<br>
+                &nbsp;&nbsp;font-size: 16px;<br>
+                &nbsp;&nbsp;line-height: 24px;<br>
+                &nbsp;&nbsp;color: var(--grey-4);<br>
+                }<br>
+                <br>
+                .checkbox__input:checked ~ .checkbox__state .checkbox__control {<br>
+                &nbsp;&nbsp;background: var(--blue-1);<br>
+                }<br>
+                <br>
+                .checkbox__input:checked ~ .checkbox__state .checkbox__icon {<br>
+                &nbsp;&nbsp;display: block;<br>
+                }<br>
+                <br>
+                .checkbox__input:focus ~ .checkbox__state .checkbox__title {<br>
+                &nbsp;&nbsp;text-decoration: underline;<br>
+                }<br>
+                <br>
+                .checkbox__input:disabled ~ .checkbox__state {<br>
+                &nbsp;&nbsp;cursor: not-allowed;<br>
+                }<br>
+                <br>
+                .checkbox__input:disabled ~ .checkbox__state .checkbox__control {<br>
+                &nbsp;&nbsp;background: var(--grey-2);<br>
+                &nbsp;&nbsp;border-radius: 4px;<br>
+                }<br>
+                <br>
+                .checkbox__input:disabled ~ .checkbox__state .checkbox__icon {<br>
+                &nbsp;&nbsp;display: none;<br>
+                }<br>
+                <br>
+                .checkbox__input:disabled ~ .checkbox__state .checkbox__title {<br>
+                &nbsp;&nbsp;color: var(--grey-2);<br>
+                }<br>
+              </code>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="view menu__content_histogram">
+          <h1 class="view__title">Histogram</h1>
+
+          <div class="histogram">
+            <div class="histogram__header">
+              <div class="histogram__info">
+                <span class="histogram__title">Total orders</span>
+                <span class="histogram__count">50254</span>
+              </div>
+              <div>
+                <span class="histogram__link">View all</span>
+              </div>
+            </div>
+            <div class="histogram__chart">
+              <div class="histogram__line" style="height: 100%"></div>
+              <div class="histogram__line" style="height: 70%"></div>
+              <div class="histogram__line" style="height: 44%"></div>
+              <div class="histogram__line" style="height: 78%"></div>
+              <div class="histogram__line" style="height: 44%"></div>
+              <div class="histogram__line" style="height: 60%"></div>
+              <div class="histogram__line" style="height: 78%"></div>
+              <div class="histogram__line" style="height: 100%"></div>
+              <div class="histogram__line" style="height: 22%"></div>
+              <div class="histogram__line" style="height: 44%"></div>
+              <div class="histogram__line" style="height: 60%"></div>
+              <div class="histogram__line" style="height: 70%"></div>
+              <div class="histogram__line" style="height: 22%"></div>
+              <div class="histogram__line" style="height: 100%"></div>
+              <div class="histogram__line" style="height: 22%"></div>
+              <div class="histogram__line" style="height: 78%"></div>
+              <div class="histogram__line" style="height: 60%"></div>
+              <div class="histogram__line" style="height: 44%"></div>
+              <div class="histogram__line" style="height: 70%"></div>
+              <div class="histogram__line" style="height: 60%"></div>
+              <div class="histogram__line" style="height: 22%"></div>
+              <div class="histogram__line" style="height: 78%"></div>
+              <div class="histogram__line" style="height: 70%"></div>
+              <div class="histogram__line" style="height: 90%"></div>
+              <div class="histogram__line" style="height: 60%"></div>
+              <div class="histogram__line" style="height: 22%"></div>
+              <div class="histogram__line" style="height: 60%"></div>
+              <div class="histogram__line" style="height: 22%"></div>
+              <div class="histogram__line" style="height: 70%"></div>
+              <div class="histogram__line" style="height: 34%"></div>
+            </div>
+          </div>
+
+          <div class="tabs">
+            <input class="tabs__input" type="radio" name="histogram-code-tab" id="#histogram-html-tab" checked>
+            <input class="tabs__input" type="radio" name="histogram-code-tab" id="#histogram-css-tab">
+
+            <div class="tabs__scroller">
+              <label class="tabs__label" for="#histogram-html-tab">HTML</label>
+              <label class="tabs__label" for="#histogram-css-tab">CSS</label>
+            </div>
+
+            <div class="tabs__content tabs__content_html">
+              <code>
+                &lt;div class="histogram"&gt;<br>
+                &nbsp;&lt;div class="histogram__header"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__info"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="histogram__title"&gt;Total orders&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="histogram__count"&gt;50254&lt;/span&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="histogram__link"&gt;View all&lt;/span&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&lt;/div&gt;<br>
+                &nbsp;&lt;div class="histogram__chart"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 100%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 70%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 44%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 78%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 44%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 60%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 78%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 100%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 22%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 44%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 60%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 70%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 22%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 100%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 22%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 78%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 60%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 44%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 70%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 60%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 22%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 78%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 70%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style="height: 90%"&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class="histogram__line" style='height: 60%'&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class='histogram__line' style='height: 22%'&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class='histogram__line' style='height: 60%'&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class='histogram__line' style='height: 22%'&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class='histogram__line' style='height: 70%'&gt;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div class='histogram__line' style='height: 34%'&gt;&lt;/div&gt;<br>
+                &nbsp;&lt;/div&gt;<br>
+              </code>
+            </div>
+
+            <div class="tabs__content tabs__content_css">
+              <code>
+                .histogram {<br>
+                &nbsp;&nbsp;font-family: "Inter";<br>
+                &nbsp;&nbsp;font-style: normal;<br>
+                &nbsp;&nbsp;font-weight: 400;<br>
+                &nbsp;&nbsp;background-color: var(--white);<br>
+                &nbsp;&nbsp;border: 1px solid var(--grey-3);<br>
+                &nbsp;&nbsp;border-radius: 8px;<br>
+                }<br>
+                <br>
+                .histogram__header {<br>
+                &nbsp;&nbsp;padding: 16px 24px 0 24px;<br>
+                &nbsp;&nbsp;display: flex;<br>
+                &nbsp;&nbsp;flex-direction: row;<br>
+                &nbsp;&nbsp;justify-content: space-between;<br>
+                }<br>
+                <br>
+                .histogram__info {<br>
+                &nbsp;&nbsp;display: flex;<br>
+                &nbsp;&nbsp;flex-direction: column;<br>
+                &nbsp;&nbsp;margin-bottom: 39px;<br>
+                }<br>
+                <br>
+                .histogram__title {<br>
+                &nbsp;&nbsp;margin-bottom: 6px;<br>
+                &nbsp;&nbsp;font-size: 16px;<br>
+                &nbsp;&nbsp;line-height: 24px;<br>
+                &nbsp;&nbsp;color: var(--black);<br>
+                &nbsp;&nbsp;opacity: 0.8;<br>
+                }<br>
+                <br>
+                .histogram__count {<br>
+                &nbsp;&nbsp;font-family: "Inter";<br>
+                &nbsp;&nbsp;font-size: 20px;<br>
+                &nbsp;&nbsp;line-height: 26px;<br>
+                &nbsp;&nbsp;color: var(--black);<br>
+                }<br>
+                <br>
+                .histogram__link {<br>
+                &nbsp;&nbsp;padding-top: 3px;<br>
+                &nbsp;&nbsp;font-size: 16px;<br>
+                &nbsp;&nbsp;line-height: 24px;<br>
+                &nbsp;&nbsp;color: var(--blue-1);<br>
+                }<br>
+                <br>
+                .histogram__chart {<br>
+                &nbsp;&nbsp;padding: 0 24px 24px 26px;<br>
+                &nbsp;&nbsp;display: flex;<br>
+                &nbsp;&nbsp;align-items: flex-end;<br>
+                &nbsp;&nbsp;height: 50px;<br>
+                }<br>
+                <br>
+                .histogram__line {<br>
+                &nbsp;&nbsp;background-color: var(--chart);<br>
+                &nbsp;&nbsp;flex-basis: 9px;<br>
+                &nbsp;&nbsp;flex-grow: 1;<br>
+                &nbsp;&nbsp;margin-right: 1px;<br>
+                }<br>
+                <br>
+                .histogram__line:last-child {<br>
+                &nbsp;&nbsp;margin-right: 0;<br>
+                }
+              </code>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="view menu__content_avatar">
+          <h1 class="view__title">Avatar</h1>
+
+          <div class="container avatar__container">
+            <div class="avatar">
+              <img class="avatar__img" src="../06-lection4/01-avatar/public/avatar-200.jpg" alt="Аватар.">
+            </div>
+          </div>
+
+          <div class="tabs">
+            <input class="tabs__input" type="radio" name="avatar-code-tab" id="#avatar-html-tab" checked>
+            <input class="tabs__input" type="radio" name="avatar-code-tab" id="#avatar-css-tab">
+
+            <div class="tabs__scroller">
+              <label class="tabs__label" for="#avatar-html-tab">HTML</label>
+              <label class="tabs__label" for="#avatar-css-tab">CSS</label>
+            </div>
+
+            <div class="tabs__content tabs__content_html">
+              <code>
+                &lt;div class="avatar"&gt;<br>
+                &nbsp;&lt;img class="avatar__img" src="./public/avatar-200.jpg" alt="Аватар."&gt;<br>
+                &lt;/div&gt;
+              </code>
+            </div>
+
+            <div class="tabs__content tabs__content_css">
+              <code>
+                .avatar {<br>
+                &nbsp;&nbsp;width: 102px;<br>
+                &nbsp;&nbsp;height: 102px;<br>
+                }<br>
+                <br>
+                .avatar__img {<br>
+                &nbsp;&nbsp;width: 100%;<br>
+                &nbsp;&nbsp;height: 100%;<br>
+                &nbsp;&nbsp;object-fit: cover;<br>
+                &nbsp;&nbsp;border-radius: 50%;<br>
+                }
+              </code>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="view menu__content_tooltip">
+          <h1 class="view__title">Tooltip</h1>
+
+          <div class="container tooltip__container">
+            <div class="tooltip">
+              <svg class="tooltip__trigger">
+                <use href="../../assets/images/sprite.svg#help"></use>
+              </svg>
+              <div class="tooltip__bubble">Helper Text</div>
+            </div>
+          </div>
+
+          <div class="tabs">
+            <input class="tabs__input" type="radio" name="tooltip-code-tab" id="#tooltip-html-tab" checked>
+            <input class="tabs__input" type="radio" name="tooltip-code-tab" id="#tooltip-css-tab">
+
+            <div class="tabs__scroller">
+              <label class="tabs__label" for="#tooltip-html-tab">HTML</label>
+              <label class="tabs__label" for="#tooltip-css-tab">CSS</label>
+            </div>
+
+            <div class="tabs__content tabs__content_html">
+              <code>
+                &lt;div class="tooltip"&gt;<br>
+                &nbsp;&lt;svg class="tooltip__trigger"&gt;<br>
+                &nbsp;&nbsp;&lt;use href="../../assets/images/sprite.svg#help"&gt;&lt;/use&gt;<br>
+                &nbsp;&lt;/svg&gt;<br>
+                &nbsp;&lt;div class="tooltip__bubble"&gt;Helper Text&lt;/div&gt;<br>
+                &lt;/div&gt;
+              </code>
+            </div>
+
+            <div class="tabs__content tabs__content_css">
+              <code>
+                .tooltip {<br>
+                &nbsp;&nbsp;display: inline-block;<br>
+                &nbsp;&nbsp;position: relative;<br>
+                }<br>
+                <br>
+                .tooltip__trigger {<br>
+                &nbsp;&nbsp;cursor: pointer;<br>
+                &nbsp;&nbsp;position: relative;<br>
+                &nbsp;&nbsp;z-index: 1;<br>
+                &nbsp;&nbsp;width: 24px;<br>
+                &nbsp;&nbsp;height: 24px;<br>
+                }<br>
+                <br>
+                .tooltip__bubble {<br>
+                &nbsp;&nbsp;font-family: "Inter";<br>
+                &nbsp;&nbsp;font-style: normal;<br>
+                &nbsp;&nbsp;font-weight: 400;<br>
+                &nbsp;&nbsp;font-size: 16px;<br>
+                &nbsp;&nbsp;line-height: 24px;<br>
+                &nbsp;&nbsp;text-align: center;<br>
+                &nbsp;&nbsp;color: var(--grey-2);<br>
+                &nbsp;&nbsp;padding: 13px 21px 8px 21px;<br>
+                &nbsp;&nbsp;background: var(--blue-1);<br>
+                &nbsp;&nbsp;box-shadow: 0px 2px 4px rgba(33, 36, 41, 0.05);<br>
+                &nbsp;&nbsp;border-radius: 10px;<br>
+                &nbsp;&nbsp;display: none;<br>
+                &nbsp;&nbsp;position: absolute;<br>
+                &nbsp;&nbsp;white-space: nowrap;<br>
+                &nbsp;&nbsp;left: 50%;<br>
+                &nbsp;&nbsp;bottom: calc(100% + 8px);<br>
+                &nbsp;&nbsp;transform: translateX(-50%);<br>
+                }<br>
+                <br>
+                .tooltip__bubble:before {<br>
+                &nbsp;&nbsp;content: "";<br>
+                &nbsp;&nbsp;border: 10px solid transparent;<br>
+                &nbsp;&nbsp;border-top-color: var(--blue-1);<br>
+                &nbsp;&nbsp;position: absolute;<br>
+                &nbsp;&nbsp;top: 100%;<br>
+                &nbsp;&nbsp;left: 50%;<br>
+                &nbsp;&nbsp;transform: translateX(-50%);<br>
+                &nbsp;&nbsp;color: var(--blue-1);<br>
+                &nbsp;&nbsp;z-index: -1;<br>
+                }<br>
+                <br>
+                .tooltip__trigger:hover ~ .tooltip__bubble {<br>
+                &nbsp;&nbsp;display: block;<br>
+                }
+              </code>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="view menu__content_calendar">
+          <h1 class="view__title">Calendar</h1>
+
+          <div class="container calendar__container">
+            <div class="calendar">
+              <div class="calendar__title">October 2019</div>
+              <div class="calendar__wrapper">
+                <div class="calendar__inner">
+                  <span class="calendar__item calendar__item_day">Mon</span>
+                  <span class="calendar__item calendar__item_day">Tue</span>
+                  <span class="calendar__item calendar__item_day">Wed</span>
+                  <span class="calendar__item calendar__item_day">Thu</span>
+                  <span class="calendar__item calendar__item_day">Fri</span>
+                  <span class="calendar__item calendar__item_day">Sat</span>
+                  <span class="calendar__item calendar__item_day">Sun</span>
+                  <span class="calendar__item calendar__item_digit"></span>
+                  <span class="calendar__item calendar__item_digit"></span>
+                  <span class="calendar__item calendar__item_digit"></span>
+                  <span class="calendar__item calendar__item_digit"></span>
+                  <span class="calendar__item calendar__item_digit">1</span>
+                  <span class="calendar__item calendar__item_digit">2</span>
+                  <span class="calendar__item calendar__item_digit">3</span>
+                  <span class="calendar__item calendar__item_digit">4</span>
+                  <span class="calendar__item calendar__item_digit">5</span>
+                  <span class="calendar__item calendar__item_digit">6</span>
+                  <span class="calendar__item calendar__item_digit">7</span>
+                  <span class="calendar__item calendar__item_digit">8</span>
+                  <span class="calendar__item calendar__item_digit">9</span>
+                  <span class="calendar__item calendar__item_digit">10</span>
+                  <span class="calendar__item calendar__item_digit">11</span>
+                  <span class="calendar__item calendar__item_digit">12</span>
+                  <span class="calendar__item calendar__item_digit">13</span>
+                  <span class="calendar__item calendar__item_digit">14</span>
+                  <span class="calendar__item calendar__item_digit">15</span>
+                  <span class="calendar__item calendar__item_digit">16</span>
+                  <span class="calendar__item calendar__item_digit">17</span>
+                  <span class="calendar__item calendar__item_digit calendar__item_border">18</span>
+                  <span class="calendar__item calendar__item_digit calendar__item_interim">19</span>
+                  <span class="calendar__item calendar__item_digit calendar__item_interim">20</span>
+                  <span class="calendar__item calendar__item_digit calendar__item_interim">21</span>
+                  <span class="calendar__item calendar__item_digit calendar__item_interim">22</span>
+                  <span class="calendar__item calendar__item_digit calendar__item_border">23</span>
+                  <span class="calendar__item calendar__item_digit">24</span>
+                  <span class="calendar__item calendar__item_digit">25</span>
+                  <span class="calendar__item calendar__item_digit">26</span>
+                  <span class="calendar__item calendar__item_digit">27</span>
+                  <span class="calendar__item calendar__item_digit">28</span>
+                  <span class="calendar__item calendar__item_digit">29</span>
+                  <span class="calendar__item calendar__item_digit">30</span>
+                  <span class="calendar__item calendar__item_digit">31</span>
+                  <span class="calendar__item calendar__item_digit"></span>
+                  <span class="calendar__item calendar__item_digit"></span>
+                  <span class="calendar__item calendar__item_digit"></span>
+                  <span class="calendar__item calendar__item_digit"></span>
+                  <span class="calendar__item calendar__item_digit"></span>
+                  <span class="calendar__item calendar__item_digit"></span>
+                  <span class="calendar__item calendar__item_digit"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tabs">
+            <input class="tabs__input" type="radio" name="calendar-code-tab" id="#calendar-html-tab" checked>
+            <input class="tabs__input" type="radio" name="calendar-code-tab" id="#calendar-css-tab">
+
+            <div class="tabs__scroller">
+              <label class="tabs__label" for="#calendar-html-tab">HTML</label>
+              <label class="tabs__label" for="#calendar-css-tab">CSS</label>
+            </div>
+
+            <div class="tabs__content tabs__content_html">
+              <code>
+                &lt;div class="calendar"&gt;<br>
+                &nbsp;&lt;div class="calendar__title"&gt;October 2019&lt;/div&gt;<br>
+                &nbsp;&lt;div class="calendar__wrapper"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="calendar__inner"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_day"&gt;Mon&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_day"&gt;Tue&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_day"&gt;Wed&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_day"&gt;Thu&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_day"&gt;Fri&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_day"&gt;Sat&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_day"&gt;Sun&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;1&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;2&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;3&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;4&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;5&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;6&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;7&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;8&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;9&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;10&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;11&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;12&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;13&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;14&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;15&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;16&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;17&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit calendar__item_border"&gt;18&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit calendar__item_interim"&gt;19&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit calendar__item_interim"&gt;20&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit calendar__item_interim"&gt;21&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit calendar__item_interim"&gt;22&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit calendar__item_border"&gt;23&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;24&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;25&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;26&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;27&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;28&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;29&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;30&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;31&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;span class="calendar__item calendar__item_digit"&gt;&lt;/span&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&lt;/div&gt;<br>
+                &lt;/div&gt;
+              </code>
+            </div>
+
+            <div class="tabs__content tabs__content_css">
+              <code>
+                .calendar {<br>
+                &nbsp;&nbsp;background: var(--white);<br>
+                &nbsp;&nbsp;border: 1px solid var(--grey-3);<br>
+                &nbsp;&nbsp;border-radius: 8px;<br>
+                &nbsp;&nbsp;padding: 28px 36px;<br>
+                }<br>
+                <br>
+                .calendar__title {<br>
+                &nbsp;&nbsp;font-family: "Inter";<br>
+                &nbsp;&nbsp;font-style: normal;<br>
+                &nbsp;&nbsp;font-weight: 600;<br>
+                &nbsp;&nbsp;font-size: 20px;<br>
+                &nbsp;&nbsp;line-height: 24px;<br>
+                &nbsp;&nbsp;color: #334D6E;<br>
+                &nbsp;&nbsp;text-align: center;<br>
+                &nbsp;&nbsp;margin-bottom: 16px;<br>
+                }<br>
+                <br>
+                .calendar__wrapper {<br>
+                &nbsp;&nbsp;position: relative;<br>
+                &nbsp;&nbsp;padding-bottom: 100%;<br>
+                }<br>
+                <br>
+                .calendar__inner {<br>
+                &nbsp;&nbsp;position: absolute;<br>
+                &nbsp;&nbsp;top: 0;<br>
+                &nbsp;&nbsp;right: 0;<br>
+                &nbsp;&nbsp;bottom: 0;<br>
+                &nbsp;&nbsp;left: 0;<br>
+                &nbsp;&nbsp;display: grid;<br>
+                &nbsp;&nbsp;grid-template-columns: repeat(7, 1fr);<br>
+                &nbsp;&nbsp;grid-template-rows: repeat(7, 1fr);<br>
+                }<br>
+                <br>
+                .calendar__item_day {<br>
+                &nbsp;&nbsp;font-family: "Inter";<br>
+                &nbsp;&nbsp;font-style: normal;<br>
+                &nbsp;&nbsp;font-weight: 400;<br>
+                &nbsp;&nbsp;font-size: 14px;<br>
+                &nbsp;&nbsp;line-height: 20px;<br>
+                &nbsp;&nbsp;align-items: flex-end;<br>
+                &nbsp;&nbsp;text-align: center;<br>
+                &nbsp;&nbsp;color: #90A0B7;<br>
+                }<br>
+                <br>
+                .calendar__item_digit {<br>
+                &nbsp;&nbsp;font-family: "Source Sans Pro";<br>
+                }<br>
+                <br>
+                .calendar__item {<br>
+                &nbsp;&nbsp;display: flex;<br>
+                &nbsp;&nbsp;justify-content: center;<br>
+                &nbsp;&nbsp;align-items: center;<br>
+                &nbsp;&nbsp;font-style: normal;<br>
+                &nbsp;&nbsp;font-weight: 400;<br>
+                &nbsp;&nbsp;font-size: 16px;<br>
+                &nbsp;&nbsp;line-height: 20px;<br>
+                &nbsp;&nbsp;text-align: center;<br>
+                &nbsp;&nbsp;color: #334D6E;<br>
+                }<br>
+                <br>
+                .calendar__item_border {<br>
+                &nbsp;&nbsp;color: var(--white);<br>
+                &nbsp;&nbsp;background-color: var(--blue-1);<br>
+                }<br>
+                <br>
+                .calendar__item_interim {<br>
+                &nbsp;&nbsp;background-color: rgba(160, 177, 245, 0.2);<br>
+                }
+              </code>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="view menu__content_modal">
+          <h1 class="view__title">Modal</h1>
+
+          <div class="container modal__container">
+            <div class="modal" style="display: block; position: relative; height: 600px; width: 700px;">
+              <div class="modal__content">
+                <div class="modal__header">
+                  <button class="modal__button">
+                    <svg class="modal__image">
+                      <use href="../../assets/images/sprite.svg#close"></use>
+                    </svg>
+                  </button>
+                  <h4 class="modal__title">Modal title</h4>
+                </div>
+                <p class="modal__text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tabs">
+            <input class="tabs__input" type="radio" name="modal-code-tab" id="#modal-html-tab" checked>
+            <input class="tabs__input" type="radio" name="modal-code-tab" id="#modal-css-tab">
+
+            <div class="tabs__scroller">
+              <label class="tabs__label" for="#modal-html-tab">HTML</label>
+              <label class="tabs__label" for="#modal-css-tab">CSS</label>
+            </div>
+
+            <div class="tabs__content tabs__content_html">
+              <code>
+                &lt;div class="modal__page"&gt;<br>
+                &nbsp;&lt;button class="button button_primary button__modal-page" id="modal-open"&gt;Open modal&lt;/button&gt;<br>
+                &nbsp;&lt;div class="modal" id="modal"&gt;<br>
+                &nbsp;&nbsp;&lt;div class="modal__content"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;div class="modal__header"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="modal__button" id="modal-close"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;svg class="modal__image"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;use href="../../assets/images/sprite.svg#close"&gt;&lt;/use&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/svg&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;h4 class="modal__title"&gt;Modal title&lt;/h4&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&lt;p class="modal__text"&gt;Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br>
+                &nbsp;&nbsp;&nbsp;&lt;/p&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                &nbsp;&lt;/div&gt;<br>
+                &lt;/div&gt;<br>
+              </code>
+            </div>
+
+            <div class="tabs__content tabs__content_css">
+              <code>
+                .modal {<br>
+                &nbsp;&nbsp;box-sizing: border-box;<br>
+                &nbsp;&nbsp;background-color: rgba(196, 196, 196, 0.5);<br>
+                &nbsp;&nbsp;display: none;<br>
+                &nbsp;&nbsp;position: fixed;<br>
+                &nbsp;&nbsp;width: 100%;<br>
+                &nbsp;&nbsp;height: 100%;<br>
+                }<br>
+                <br>
+                .modal__content {<br>
+                &nbsp;&nbsp;background: var(--white);<br>
+                &nbsp;&nbsp;border-radius: 8px;<br>
+                &nbsp;&nbsp;padding: 12px 12px 33px 40px;<br>
+                &nbsp;&nbsp;position: absolute;<br>
+                &nbsp;&nbsp;top: 50%;<br>
+                &nbsp;&nbsp;left: 50%;<br>
+                &nbsp;&nbsp;transform: translate(-50%, -50%);<br>
+                }<br>
+                <br>
+                .modal__header {<br>
+                &nbsp;&nbsp;position: relative;<br>
+                }<br>
+                <br>
+                .modal__button {<br>
+                &nbsp;&nbsp;display: inline;<br>
+                &nbsp;&nbsp;background-color: transparent;<br>
+                &nbsp;&nbsp;border-style: none;<br>
+                &nbsp;&nbsp;position: absolute;<br>
+                &nbsp;&nbsp;left: calc(100% - 20px);<br>
+                }<br>
+                <br>
+                .modal__image {<br>
+                &nbsp;&nbsp;width: 16px;<br>
+                &nbsp;&nbsp;height: 16px;<br>
+                }<br>
+                <br>
+                .modal__title {<br>
+                &nbsp;&nbsp;padding-top: 18px;<br>
+                &nbsp;&nbsp;margin: 0;<br>
+                &nbsp;&nbsp;font-family: "Inter", sans-serif;<br>
+                &nbsp;&nbsp;font-style: normal;<br>
+                &nbsp;&nbsp;font-weight: 600;<br>
+                &nbsp;&nbsp;font-size: 20px;<br>
+                &nbsp;&nbsp;line-height: 24px;<br>
+                &nbsp;&nbsp;color: #334D6E;<br>
+                }<br>
+                <br>
+                .modal__text {<br>
+                &nbsp;&nbsp;padding-top: 14px;<br>
+                &nbsp;&nbsp;margin: 0 28px 0 0;<br>
+                &nbsp;&nbsp;font-family: "Inter", sans-serif;<br>
+                &nbsp;&nbsp;font-style: normal;<br>
+                &nbsp;&nbsp;font-weight: 400;<br>
+                &nbsp;&nbsp;font-size: 16px;<br>
+                &nbsp;&nbsp;line-height: 24px;<br>
+                &nbsp;&nbsp;color: var(--grey-4);<br>
+                }
+              </code>
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+      <footer class="footer_template">
+        <h2 class="footer__title">Reusable component library</h2>
+      </footer>
+    </div>
+  </body>
 </html>

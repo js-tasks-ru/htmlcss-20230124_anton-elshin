@@ -1,0 +1,14 @@
+.toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.toggle__sun, .toggle__moon {
+    width: 24px;
+    height: 24px;
+}
+
+.toggle__moon {
+    color: #ACB5BD;
+}

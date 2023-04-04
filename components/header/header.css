@@ -30,7 +30,7 @@
 }
 
 .header {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-style: normal;
 }
 
@@ -39,9 +39,17 @@
 }
 
 .header__title {
-    margin: 0;
     font-weight: 500;
     font-size: 50px;
     padding-left: 160px;
-    padding-top: 24px;
+    margin: 24px 0 0;
+}
+
+.header__logo {
+    margin-right: 568px;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
 }

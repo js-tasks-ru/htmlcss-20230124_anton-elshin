@@ -1,5 +1,5 @@
 .footer {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     padding-top: 71px;
     padding-bottom: 136px;
     font-style: normal;
@@ -13,7 +13,7 @@
     margin: 0;
     font-weight: 500;
     font-size: 38px;
-    text-align: left;
+    text-align: center;
     vertical-align: top;
     color: #212429;
 }
@@ -21,7 +21,7 @@
 .footer_template .footer__title {
     text-align: center;
     margin: 56px auto;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
@@ -39,4 +39,6 @@
     text-align: center;
     vertical-align: top;
     color: #212429;
+    padding-left: 417px;
+    padding-right: 383px;
 }
