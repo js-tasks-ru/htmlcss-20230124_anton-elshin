@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./07-lection5/02-radio/radio.css">
     <link rel="stylesheet" href="./07-lection5/03-toggler/toggler.css">
     <link rel="stylesheet" href="./07-lection5/05-tabs/tabs.css">
+    <link rel="stylesheet" href="./09-lection7/01-burger-menu/burger-menu.css">
     <style>
 
       .container {
@@ -135,12 +136,61 @@
           padding-left: 160px;
       }
 
+      .header__container {
+          justify-content: center;
+      }
+
+      .header__container .header__logo {
+          margin-right: 0;
+          padding: 16px 0;
+      }
+
+      .header__container > .navigation {
+          display: none;
+      }
+
+      .header__container > .toggle {
+          display: none;
+      }
+
+      @media (min-width: 768px) {
+          .header__container {
+              justify-content: space-between;
+          }
+
+          .header__container button {
+              display: none;
+          }
+
+          .header__container .header__logo {
+              margin-right: 568px;
+              padding: 16px 0 16px 165px;
+          }
+
+          .header__container .navigation {
+              display: flex;
+              padding: 16px 0;
+          }
+
+          .header__container .toggle {
+              display: flex;
+          }
+      }
+
     </style>
   </head>
   <body>
     <div class="page">
       <header class="header">
         <div class="header__container">
+          <button class="burger-menu__button burger-menu__button_open" id="burger-menu-open">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12H21" stroke="#495057" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 6H21" stroke="#495057" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 18H21" stroke="#495057" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
           <div class="header__logo">
             <div class="logo__item logo__item_square"></div>
             <div class="logo__item logo__item_circle"></div>
@@ -680,5 +730,66 @@
         <p class="footer__description">This project is a collection of professionally designed, pre-built, fully responsive HTML snippets you can drop into your projects. Get started by checking out our free preview components, or browsing the PNG previews in the categories you"re most curious about.</p>
       </footer>
     </div>
+    <div class="burger-menu" id="burger-menu">
+      <button class="burger-menu__button burger-menu__button_close" id="burger-menu-close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18" stroke="#212429" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 6L18 18" stroke="#212429" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="burger-menu__container">
+        <div class="burger-menu__header">
+          <div class="burger-menu__logo header__logo">
+            <div class="logo__item logo__item_square"></div>
+            <div class="logo__item logo__item_circle"></div>
+            <div class="logo__item logo__item_triangle"></div>
+          </div>
+          <div class="burger-menu__content">
+            <div class="burger-menu__toggle">
+              <div class="burger-menu__toggle-name">Dark mode</div>
+              <div class="toggle">
+                <label class="toggler">
+                  <input class="toggler__input" type="checkbox">
+                  <div class="toggler__state">
+                    <div class="toggler__control">
+                      <div class="toggler__inner"></div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="burger-menu__content">
+            <h2 class="burger-menu__title">Elements</h2>
+            <ul class="burger-menu__group">
+              <li class="burger-menu__item">
+                <a class="burger-menu__link burger-menu__link_active" href="pages/template.html">Custom form elements</a>
+              </li>
+              <li class="burger-menu__item">
+                <a class="burger-menu__link" href="pages/template.html">Histogram</a>
+              </li>
+              <li class="burger-menu__item">
+                <a class="burger-menu__link" href="pages/template.html">Avatar</a>
+              </li>
+            </ul>
+          </div>
+          <div class="burger-menu__content">
+            <h2 class="burger-menu__title">Containers</h2>
+            <ul class="burger-menu__group">
+              <li class="burger-menu__item">
+                <a class="burger-menu__link" href="pages/template.html">Tooltip</a>
+              </li>
+              <li class="burger-menu__item">
+                <a class="burger-menu__link" href="pages/template.html">Calendar</a>
+              </li>
+              <li class="burger-menu__item">
+                <a class="burger-menu__link" href="pages/template.html">Modal</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
+  <script src="./09-lection7/01-burger-menu/burger-menu.js"></script>
 </html>

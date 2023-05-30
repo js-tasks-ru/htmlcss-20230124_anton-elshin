@@ -1,7 +1,7 @@
 .header__logo {
     display: flex;
     gap: 8px;
-    padding: 16px 0 16px 165px;
+    padding: 16px 0;
 }
 
 
@@ -45,11 +45,8 @@
     margin: 24px 0 0;
 }
 
-.header__logo {
-    margin-right: 568px;
-}
-
 .header__container {
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
