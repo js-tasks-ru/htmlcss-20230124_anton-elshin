@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<!-- Страница бургер-меню -->
 <html lang="ru">
-    <head>
-        <link rel="stylesheet" href="../../assets/css/main.css">
-        <link rel="stylesheet" href="./burger-menu.css">
-        <script defer src="./burger-menu.js"></script>
-    </head>
-    <body>
+  <head>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="./burger-menu.css">
+    <link rel="stylesheet" href="../../03-lection1/01-button/button.css">
+    <script defer src="./burger-menu.js"></script>
+  </head>
+  <style>
+    .button_icon {
+      position: absolute;
+      left: 16px;
+      top: 20px;
+      padding: 0;
+      border: none;
+    }
+  </style>
+  <body>
+    <button class="button button_icon" id="burger-menu-open">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 12H21" stroke="#495057" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 6H21" stroke="#495057" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 18H21" stroke="#495057" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
 
-    </body>
+    <div class="burger-menu" id="burger-menu">
+      <button class="burger-menu__button burger-menu__button_close" id="burger-menu-close">
+        <svg class="burger-menu__button-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18" stroke="#212429" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 6L18 18" stroke="#212429" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="burger-menu__container">
+      </div>
+    </div>
+  </body>
+  <script src="./burger-menu.js"></script>
 </html>
